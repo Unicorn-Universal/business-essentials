@@ -138,7 +138,7 @@ export default function GeneralAppPage() {
             />
           </Grid>
            
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={6} lg={8}>
             <AppAreaInstalled
               title="Revenue"
               subheader="(+43%) than last year"
@@ -164,7 +164,7 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={2}>
+          <Grid item xs={12} md={6} lg={4}>
             <Stack spacing={3}>
               <AppWidget
                 title="People"
@@ -196,11 +196,8 @@ export default function GeneralAppPage() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTopAuthors title="Team" list={_appAuthors} />
-          </Grid>
 
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={12} lg={4}>
             <AppNewInvoice
               title="Recent Invoices"
               tableData={_appInvoices}
@@ -213,6 +210,11 @@ export default function GeneralAppPage() {
               ]}
             />
           </Grid>
+
+          <Grid item xs={12} md={6} lg={4}>
+            <AppTopAuthors title="Team" list={_appAuthors} />
+          </Grid>
+      
 
           {/* <Grid item xs={12} md={6} lg={4}>
             <AppTopRelated title="Top Related Applications" list={_appRelated} />
