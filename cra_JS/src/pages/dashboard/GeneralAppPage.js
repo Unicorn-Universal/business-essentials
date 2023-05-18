@@ -49,8 +49,8 @@ export default function GeneralAppPage() {
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <AppWelcome
-              // title={`Welcome back! \n ${user?.displayName}`}
-              title={`Welcome back! \n Unicorn User`}
+              title={`Welcome back! \n ${user?.displayName}`}
+              // title={`Welcome back! \n Unicorn User`}
               description="If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything."
               img={
                 <SeoIllustration
@@ -69,9 +69,9 @@ export default function GeneralAppPage() {
             <AppFeatured list={_appFeatured} />
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
-              title="Total Active Users"
+              title="Invoices"
               percent={2.6}
               total={18765}
               chart={{
@@ -81,9 +81,21 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
-              title="Total Installed"
+              title="Tasks"
+              percent={-2.6}
+              total={18765}
+              chart={{
+                colors: [theme.palette.secondary.main],
+                series: [5, 18, 12, 51, 68, 11, 39, 37, 27, 20],
+              }}
+            />
+          </Grid>
+
+          <Grid item xs={12} md={3}>
+            <AppWidgetSummary
+              title="Users"
               percent={0.2}
               total={4876}
               chart={{
@@ -93,9 +105,9 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
-              title="Total Downloads"
+              title="Website Visits"
               percent={-0.1}
               total={678}
               chart={{
@@ -104,6 +116,7 @@ export default function GeneralAppPage() {
               }}
             />
           </Grid>
+          
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentDownload
