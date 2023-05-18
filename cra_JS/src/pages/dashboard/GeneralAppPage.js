@@ -118,27 +118,6 @@ export default function GeneralAppPage() {
           </Grid>
           
 
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentDownload
-              title="Current Download"
-              chart={{
-                colors: [
-                  theme.palette.primary.main,
-                  theme.palette.info.main,
-                  theme.palette.error.main,
-                  theme.palette.warning.main,
-                ],
-                series: [
-                  { label: 'Mac', value: 12244 },
-                  { label: 'Window', value: 53345 },
-                  { label: 'iOS', value: 44313 },
-                  { label: 'Android', value: 78343 },
-                ],
-              }}
-            />
-          </Grid>
-           
-
           <Grid item xs={12} md={6} lg={6}>
             <AppAreaInstalled
               title="Area Installed"
@@ -164,6 +143,27 @@ export default function GeneralAppPage() {
               }}
             />
           </Grid>
+
+          <Grid item xs={12} md={6} lg={4}>
+            <AppCurrentDownload
+              title="Current Download"
+              chart={{
+                colors: [
+                  theme.palette.primary.main,
+                  theme.palette.info.main,
+                  theme.palette.error.main,
+                  theme.palette.warning.main,
+                ],
+                series: [
+                  { label: 'Mac', value: 12244 },
+                  { label: 'Window', value: 53345 },
+                  { label: 'iOS', value: 44313 },
+                  { label: 'Android', value: 78343 },
+                ],
+              }}
+            />
+          </Grid>
+           
 
           <Grid item xs={12} md={6} lg={2}>
             <Stack spacing={3}>
