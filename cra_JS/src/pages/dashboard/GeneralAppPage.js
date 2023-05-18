@@ -169,7 +169,7 @@ export default function GeneralAppPage() {
             <Stack spacing={3}>
               <AppWidget
                 title="People"
-                total={38566}
+                total={38}
                 icon="eva:person-fill"
                 chart={{
                   series: 48,
@@ -178,7 +178,7 @@ export default function GeneralAppPage() {
 
               <AppWidget
                 title="Email"
-                total={55566}
+                total={55}
                 icon="eva:email-fill"
                 color="info"
                 chart={{
@@ -187,7 +187,7 @@ export default function GeneralAppPage() {
               />
               <AppWidget
                 title="tasks"
-                total={55566}
+                total={55}
                 icon="eva:email-fill"
                 color="secondary"
                 chart={{
