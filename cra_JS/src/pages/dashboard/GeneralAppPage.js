@@ -137,8 +137,9 @@ export default function GeneralAppPage() {
               }}
             />
           </Grid>
+           
 
-          <Grid item xs={12} md={6} lg={8}>
+          <Grid item xs={12} md={6} lg={4}>
             <AppAreaInstalled
               title="Area Installed"
               subheader="(+43%) than last year"
@@ -162,6 +163,38 @@ export default function GeneralAppPage() {
                 ],
               }}
             />
+          </Grid>
+
+          <Grid item xs={12} md={6} lg={4}>
+            <Stack spacing={3}>
+              <AppWidget
+                title="Conversion"
+                total={38566}
+                icon="eva:person-fill"
+                chart={{
+                  series: 48,
+                }}
+              />
+
+              <AppWidget
+                title="Applications"
+                total={55566}
+                icon="eva:email-fill"
+                color="info"
+                chart={{
+                  series: 75,
+                }}
+              />
+              <AppWidget
+                title="Applications"
+                total={55566}
+                icon="eva:email-fill"
+                color="secondary"
+                chart={{
+                  series: 75,
+                }}
+              />
+            </Stack>
           </Grid>
 
           <Grid item xs={12} lg={8}>
