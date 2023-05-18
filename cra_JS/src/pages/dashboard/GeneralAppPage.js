@@ -168,7 +168,7 @@ export default function GeneralAppPage() {
           <Grid item xs={12} md={6} lg={2}>
             <Stack spacing={3}>
               <AppWidget
-                title="Conversion"
+                title="People"
                 total={38566}
                 icon="eva:person-fill"
                 chart={{
@@ -177,7 +177,7 @@ export default function GeneralAppPage() {
               />
 
               <AppWidget
-                title="Applications"
+                title="Email"
                 total={55566}
                 icon="eva:email-fill"
                 color="info"
@@ -186,7 +186,7 @@ export default function GeneralAppPage() {
                 }}
               />
               <AppWidget
-                title="Applications"
+                title="tasks"
                 total={55566}
                 icon="eva:email-fill"
                 color="secondary"
