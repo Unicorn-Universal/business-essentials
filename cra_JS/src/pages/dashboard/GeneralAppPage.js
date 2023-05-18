@@ -47,7 +47,7 @@ export default function GeneralAppPage() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
-          {/* <Grid item xs={12} md={8}>
+          {/* <Grid item xs={12} md={12}>
             <AppWelcome
               title={`Welcome back! \n ${user?.displayName}`}
               // title={`Welcome back! \n Unicorn User`}
@@ -69,19 +69,7 @@ export default function GeneralAppPage() {
             <AppFeatured list={_appFeatured} />
           </Grid> */}
 
-          <Grid item xs={12} md={2.4}>
-            <AppWidgetSummary
-              title="Income"
-              percent={2.6}
-              total={32765}
-              chart={{
-                colors: [theme.palette.primary.main],
-                series: [5, 18, 12, 51, 68, 11, 39, 37, 27, 20],
-              }}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={2.4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
               title="Invoices"
               percent={2.6}
@@ -93,7 +81,7 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={2.4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
               title="Tasks"
               percent={-2.6}
@@ -105,7 +93,7 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={2.4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
               title="Users"
               percent={0.2}
@@ -117,7 +105,7 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={2.4}>
+          <Grid item xs={12} md={3}>
             <AppWidgetSummary
               title="Website Visits"
               percent={-0.1}
@@ -130,6 +118,26 @@ export default function GeneralAppPage() {
           </Grid>
           
 
+          <Grid item xs={12} md={6} lg={4}>
+            <AppCurrentDownload
+              title="Current Download"
+              chart={{
+                colors: [
+                  theme.palette.primary.main,
+                  theme.palette.info.main,
+                  theme.palette.error.main,
+                  theme.palette.warning.main,
+                ],
+                series: [
+                  { label: 'Mac', value: 12244 },
+                  { label: 'Window', value: 53345 },
+                  { label: 'iOS', value: 44313 },
+                  { label: 'Android', value: 78343 },
+                ],
+              }}
+            />
+          </Grid>
+           
           <Grid item xs={12} md={6} lg={6}>
             <AppAreaInstalled
               title="Revenue"
@@ -155,27 +163,6 @@ export default function GeneralAppPage() {
               }}
             />
           </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentDownload
-              title="Current Download"
-              chart={{
-                colors: [
-                  theme.palette.primary.main,
-                  theme.palette.info.main,
-                  theme.palette.error.main,
-                  theme.palette.warning.main,
-                ],
-                series: [
-                  { label: 'Mac', value: 12244 },
-                  { label: 'Window', value: 53345 },
-                  { label: 'iOS', value: 44313 },
-                  { label: 'Android', value: 78343 },
-                ],
-              }}
-            />
-          </Grid>
-           
 
           <Grid item xs={12} md={6} lg={2}>
             <Stack spacing={3}>
