@@ -139,7 +139,7 @@ export default function GeneralAppPage() {
           </Grid>
            
 
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={6}>
             <AppAreaInstalled
               title="Area Installed"
               subheader="(+43%) than last year"
@@ -165,7 +165,7 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={2}>
             <Stack spacing={3}>
               <AppWidget
                 title="Conversion"
