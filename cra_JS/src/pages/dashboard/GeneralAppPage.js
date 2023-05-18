@@ -8,8 +8,8 @@ import { useAuthContext } from '../../auth/useAuthContext';
 import {
   _appFeatured,
   _appAuthors,
-  _appInstalled,
-  _appRelated,
+  // _appInstalled,
+  // _appRelated,
   _appInvoices,
 } from '../../_mock/arrays';
 // components
@@ -21,11 +21,11 @@ import {
   AppFeatured,
   AppNewInvoice,
   AppTopAuthors,
-  AppTopRelated,
+  // AppTopRelated,
   AppAreaInstalled,
   AppWidgetSummary,
   AppCurrentDownload,
-  AppTopInstalledCountries,
+  // AppTopInstalledCountries,
 } from '../../sections/@dashboard/general/app';
 // assets
 import { SeoIllustration } from '../../assets/illustrations';
@@ -197,9 +197,13 @@ export default function GeneralAppPage() {
             </Stack>
           </Grid>
 
+          <Grid item xs={12} md={6} lg={4}>
+            <AppTopAuthors title="Team" list={_appAuthors} />
+          </Grid>
+
           <Grid item xs={12} lg={8}>
             <AppNewInvoice
-              title="New Invoice"
+              title="Recent Invoices"
               tableData={_appInvoices}
               tableLabels={[
                 { id: 'id', label: 'Invoice ID' },
@@ -211,16 +215,12 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
+          {/* <Grid item xs={12} md={6} lg={4}>
             <AppTopRelated title="Top Related Applications" list={_appRelated} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
             <AppTopInstalledCountries title="Top Installed Countries" list={_appInstalled} />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTopAuthors title="Top Authors" list={_appAuthors} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
@@ -244,7 +244,7 @@ export default function GeneralAppPage() {
                 }}
               />
             </Stack>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </>
