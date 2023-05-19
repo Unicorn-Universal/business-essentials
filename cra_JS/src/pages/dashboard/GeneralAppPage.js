@@ -164,7 +164,25 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} lg={6}>
+            <AppNewInvoice
+              title="Recent Invoices"
+              tableData={_appInvoices}
+              tableLabels={[
+                { id: 'id', label: 'Invoice ID' },
+                { id: 'category', label: 'Category' },
+                { id: 'price', label: 'Price' },
+                { id: 'status', label: 'Status' },
+                { id: '' },
+              ]}
+            />
+          </Grid>
+
+          <Grid item xs={12} md={6} lg={3}>
+            <AppTopAuthors title="Team" list={_appAuthors} />
+          </Grid>
+      
+          <Grid item xs={12} md={6} lg={3}>
             <Stack spacing={3}>
               <AppWidget
                 title="People"
@@ -195,27 +213,6 @@ export default function GeneralAppPage() {
               />
             </Stack>
           </Grid>
-
-
-          <Grid item xs={12} lg={4}>
-            <AppNewInvoice
-              title="Recent Invoices"
-              tableData={_appInvoices}
-              tableLabels={[
-                { id: 'id', label: 'Invoice ID' },
-                { id: 'category', label: 'Category' },
-                { id: 'price', label: 'Price' },
-                { id: 'status', label: 'Status' },
-                { id: '' },
-              ]}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTopAuthors title="Team" list={_appAuthors} />
-          </Grid>
-      
-
           {/* <Grid item xs={12} md={6} lg={4}>
             <AppTopRelated title="Top Related Applications" list={_appRelated} />
           </Grid>
