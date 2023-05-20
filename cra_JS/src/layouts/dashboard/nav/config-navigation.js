@@ -57,7 +57,7 @@ const navConfig = [
         // Documents
         {
           title: 'Documents',
-          path: PATH_DASHBOARD.file.root,
+          path: PATH_DASHBOARD.file.root, 
           icon: ICONS.file,
           children: [
             { title: 'overview', path: PATH_DASHBOARD.general.file },
@@ -76,6 +76,21 @@ const navConfig = [
           
         ]
       },
+
+      {
+        items: [
+          // Schedule
+          {
+            title: 'Schedule',
+            path: PATH_DASHBOARD.calendar,
+            icon: ICONS.calendar,
+            children: [
+              { title: 'Calendar', path: PATH_DASHBOARD.calendar },
+              { title: 'Tasks', path: PATH_DASHBOARD.kanban },
+            ],
+          },
+        ]
+        },
       
 
   // {

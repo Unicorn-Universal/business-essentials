@@ -189,7 +189,7 @@ export default function UserListPage() {
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
-        <CustomBreadcrumbs
+        <CustomBreadcrumbs 
           heading="User List"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
