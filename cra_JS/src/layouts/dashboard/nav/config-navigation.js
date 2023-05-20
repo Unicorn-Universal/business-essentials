@@ -38,17 +38,63 @@ const ICONS = {
 const navConfig = [
   // GENERAL
   // ----------------------------------------------------------------------
+
   {
     subheader: 'general',
     items: [
-      { title: 'app', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
-      { title: 'ecommerce', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
-      { title: 'analytics', path: PATH_DASHBOARD.general.analytics, icon: ICONS.analytics },
-      { title: 'banking', path: PATH_DASHBOARD.general.banking, icon: ICONS.banking },
-      { title: 'booking', path: PATH_DASHBOARD.general.booking, icon: ICONS.booking },
-      { title: 'file', path: PATH_DASHBOARD.general.file, icon: ICONS.file },
+      { title: 'Dashboard', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
+      { title: 'Accounting', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
+      // { title: 'analytics', path: PATH_DASHBOARD.general.analytics, icon: ICONS.analytics },
+      // { title: 'banking', path: PATH_DASHBOARD.general.banking, icon: ICONS.banking },
+      // { title: 'booking', path: PATH_DASHBOARD.general.booking, icon: ICONS.booking },
     ],
   },
+
+
+// Persius added and structured documents path
+    {
+      items: [
+        // Documents
+        {
+          title: 'Documents',
+          path: PATH_DASHBOARD.file.root,
+          icon: ICONS.file,
+          children: [
+            { title: 'overview', path: PATH_DASHBOARD.general.file },
+            { title: 'File manager', path: PATH_DASHBOARD.fileManager },
+          ],
+        },
+      ]
+      },
+
+  // {
+  //   title: 'user',
+  //   path: PATH_DASHBOARD.user.root,
+  //   icon: ICONS.user,
+  //   children: [
+  //     { title: 'profile', path: PATH_DASHBOARD.user.profile },
+  //     { title: 'cards', path: PATH_DASHBOARD.user.cards },
+  //     { title: 'list', path: PATH_DASHBOARD.user.list },
+  //     { title: 'create', path: PATH_DASHBOARD.user.new },
+  //     { title: 'edit', path: PATH_DASHBOARD.user.demoEdit },
+  //     { title: 'account', path: PATH_DASHBOARD.user.account },
+  //   ],
+  // },
+
+
+
+
+  // {
+  //   subheader: 'general',
+  //   items: [
+  //     { title: 'app', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
+  //     { title: 'ecommerce', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
+  //     { title: 'analytics', path: PATH_DASHBOARD.general.analytics, icon: ICONS.analytics },
+  //     { title: 'banking', path: PATH_DASHBOARD.general.banking, icon: ICONS.banking },
+  //     { title: 'booking', path: PATH_DASHBOARD.general.booking, icon: ICONS.booking },
+  //     { title: 'file', path: PATH_DASHBOARD.general.file, icon: ICONS.file },
+  //   ],
+  // },
 
   // MANAGEMENT
   // ----------------------------------------------------------------------
@@ -109,11 +155,11 @@ const navConfig = [
           { title: 'create', path: PATH_DASHBOARD.blog.new },
         ],
       },
-      {
-        title: 'File manager',
-        path: PATH_DASHBOARD.fileManager,
-        icon: ICONS.folder,
-      },
+      // {
+      //   title: 'File manager',
+      //   path: PATH_DASHBOARD.fileManager,
+      //   icon: ICONS.folder,
+      // },
     ],
   },
 

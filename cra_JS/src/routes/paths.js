@@ -39,6 +39,7 @@ export const PATH_DASHBOARD = {
   kanban: path(ROOTS_DASHBOARD, '/kanban'),
   calendar: path(ROOTS_DASHBOARD, '/calendar'),
   fileManager: path(ROOTS_DASHBOARD, '/files-manager'),
+  // file: path(ROOTS_DASHBOARD, '/file'),
   permissionDenied: path(ROOTS_DASHBOARD, '/permission-denied'),
   blank: path(ROOTS_DASHBOARD, '/blank'),
   general: {
@@ -49,6 +50,12 @@ export const PATH_DASHBOARD = {
     booking: path(ROOTS_DASHBOARD, '/booking'),
     file: path(ROOTS_DASHBOARD, '/file'),
   },
+
+// Persius added 
+file: {
+  root: path(ROOTS_DASHBOARD, '/file'),
+},
+
   mail: {
     root: path(ROOTS_DASHBOARD, '/mail'),
     all: path(ROOTS_DASHBOARD, '/mail/all'),

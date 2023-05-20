@@ -1,37 +1,42 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Button } from '@mui/material';
+import { Container, Grid,  Stack } from '@mui/material';
 // auth
-import { useAuthContext } from '../../auth/useAuthContext';
+// import { useAuthContext } from '../../auth/useAuthContext';
 // _mock_
 import {
-  _ecommerceNewProducts,
+  // _ecommerceNewProducts,
   _ecommerceSalesOverview,
-  _ecommerceBestSalesman,
-  _ecommerceLatestProducts,
+  // persius added
+  _bankingRecentTransitions,
 } from '../../_mock/arrays';
+
 // components
 import { useSettingsContext } from '../../components/settings';
 // sections
 import {
-  EcommerceNewProducts,
+  // EcommerceNewProducts,
   EcommerceYearlySales,
-  EcommerceBestSalesman,
   EcommerceSaleByGender,
   EcommerceWidgetSummary,
   EcommerceSalesOverview,
-  EcommerceLatestProducts,
   EcommerceCurrentBalance,
 } from '../../sections/@dashboard/general/e-commerce';
-import { AppWelcome } from '../../sections/@dashboard/general/app';
+
+import {
+  BankingWidgetSummary,
+  BankingRecentTransitions,
+  BankingExpensesCategories,
+} from '../../sections/@dashboard/general/banking';
+// import { AppWelcome } from '../../sections/@dashboard/general/app';
 // assets
-import { MotivationIllustration } from '../../assets/illustrations';
+// import { MotivationIllustration } from '../../assets/illustrations';
 
 // ----------------------------------------------------------------------
 
 export default function GeneralEcommercePage() {
-  const { user } = useAuthContext();
+  // const { user } = useAuthContext();
 
   const theme = useTheme();
 
@@ -45,7 +50,7 @@ export default function GeneralEcommercePage() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={8}>
+          {/* <Grid item xs={12} md={8}>
             <AppWelcome
               title={`Congratulations! \n ${user?.displayName}`}
               description="Best seller of the month You have done 57.6% more sales today."
@@ -60,11 +65,36 @@ export default function GeneralEcommercePage() {
               }
               action={<Button variant="contained">Go Now</Button>}
             />
+          </Grid> */}
+
+          <Grid item xs={12} md={12}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
+              <BankingWidgetSummary
+                title="Income"
+                icon="eva:diagonal-arrow-left-down-fill"
+                percent={2.6}
+                total={18765}
+                chart={{
+                  series: [111, 136, 76, 108, 74, 54, 57, 84],
+                }}
+              />
+
+              <BankingWidgetSummary
+                title="Expenses"
+                color="warning"
+                icon="eva:diagonal-arrow-right-up-fill"
+                percent={-0.5}
+                total={8938}
+                chart={{
+                  series: [111, 136, 76, 108, 74, 54, 57, 84],
+                }}
+              />
+            </Stack>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          {/* <Grid item xs={12} md={4}>
             <EcommerceNewProducts list={_ecommerceNewProducts} />
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} md={4}>
             <EcommerceWidgetSummary
@@ -153,7 +183,55 @@ export default function GeneralEcommercePage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={8}>
+          <Grid item xs={12} md={8}>
+            <Stack spacing={3}>
+             <BankingExpensesCategories
+                title="Expenses Categories"
+                chart={{
+                  series: [
+                    { label: 'Category 1', value: 14 },
+                    { label: 'Category 2', value: 23 },
+                    { label: 'Category 3', value: 21 },
+                    { label: 'Category 4', value: 17 },
+                    { label: 'Category 5', value: 15 },
+                    { label: 'Category 6', value: 10 },
+                    { label: 'Category 7', value: 12 },
+                    { label: 'Category 8', value: 17 },
+                    { label: 'Category 9', value: 21 },
+                  ],
+                  colors: [
+                    theme.palette.primary.main,
+                    theme.palette.warning.dark,
+                    theme.palette.success.darker,
+                    theme.palette.error.main,
+                    theme.palette.info.dark,
+                    theme.palette.info.darker,
+                    theme.palette.success.main,
+                    theme.palette.warning.main,
+                    theme.palette.info.main,
+                  ],
+                }}
+              />
+            </Stack>
+          </Grid>
+
+          <Grid item xs={12} md={4}>
+            <Stack spacing={3}>
+             <BankingRecentTransitions
+                title="Recent Transitions"
+                tableData={_bankingRecentTransitions}
+                tableLabels={[
+                  { id: 'description', label: 'Description' },
+                  { id: 'date', label: 'Date' },
+                  { id: 'amount', label: 'Amount' },
+                  { id: 'status', label: 'Status' },
+                  { id: '' },
+                ]}
+              />
+            </Stack>
+          </Grid>
+
+          {/* <Grid item xs={12} md={6} lg={8}>
             <EcommerceBestSalesman
               title="Best Salesman"
               tableData={_ecommerceBestSalesman}
@@ -169,7 +247,7 @@ export default function GeneralEcommercePage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <EcommerceLatestProducts title="Latest Products" list={_ecommerceLatestProducts} />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </>
