@@ -205,106 +205,106 @@ const navConfig = [
         path: PATH_DASHBOARD.chat.root,
         icon: ICONS.chat,
       },
-      {
-        title: 'calendar',
-        path: PATH_DASHBOARD.calendar,
-        icon: ICONS.calendar,
-      },
-      {
-        title: 'kanban',
-        path: PATH_DASHBOARD.kanban,
-        icon: ICONS.kanban,
-      },
+      // {
+      //   title: 'calendar',
+      //   path: PATH_DASHBOARD.calendar,
+      //   icon: ICONS.calendar,
+      // },
+      // {
+      //   title: 'kanban',
+      //   path: PATH_DASHBOARD.kanban,
+      //   icon: ICONS.kanban,
+      // },
     ],
   },
 
   // DEMO MENU STATES
-  {
-    subheader: 'Other cases',
-    items: [
-      {
+  // {
+  //   subheader: 'Other cases',
+  //   items: [
+  //     {
         // default roles : All roles can see this entry.
         // roles: ['user'] Only users can see this item.
         // roles: ['admin'] Only admin can see this item.
         // roles: ['admin', 'manager'] Only admin/manager can see this item.
         // Reference from 'src/guards/RoleBasedGuard'.
-        title: 'item_by_roles',
-        path: PATH_DASHBOARD.permissionDenied,
-        icon: ICONS.lock,
-        roles: ['admin'],
-        caption: 'only_admin_can_see_this_item',
-      },
-      {
-        title: 'menu_level',
-        path: '#/dashboard/menu_level',
-        icon: ICONS.menuItem,
-        children: [
-          {
-            title: 'menu_level_2a',
-            path: '#/dashboard/menu_level/menu_level_2a',
-          },
-          {
-            title: 'menu_level_2b',
-            path: '#/dashboard/menu_level/menu_level_2b',
-            children: [
-              {
-                title: 'menu_level_3a',
-                path: '#/dashboard/menu_level/menu_level_2b/menu_level_3a',
-              },
-              {
-                title: 'menu_level_3b',
-                path: '#/dashboard/menu_level/menu_level_2b/menu_level_3b',
-                children: [
-                  {
-                    title: 'menu_level_4a',
-                    path: '#/dashboard/menu_level/menu_level_2b/menu_level_3b/menu_level_4a',
-                  },
-                  {
-                    title: 'menu_level_4b',
-                    path: '#/dashboard/menu_level/menu_level_2b/menu_level_3b/menu_level_4b',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: 'item_disabled',
-        path: '#disabled',
-        icon: ICONS.disabled,
-        disabled: true,
-      },
+      //   title: 'item_by_roles',
+      //   path: PATH_DASHBOARD.permissionDenied,
+      //   icon: ICONS.lock,
+      //   roles: ['admin'],
+      //   caption: 'only_admin_can_see_this_item',
+      // },
+      // {
+      //   title: 'menu_level',
+      //   path: '#/dashboard/menu_level',
+      //   icon: ICONS.menuItem,
+      //   children: [
+      //     {
+      //       title: 'menu_level_2a',
+      //       path: '#/dashboard/menu_level/menu_level_2a',
+      //     },
+      //     {
+      //       title: 'menu_level_2b',
+      //       path: '#/dashboard/menu_level/menu_level_2b',
+      //       children: [
+      //         {
+      //           title: 'menu_level_3a',
+      //           path: '#/dashboard/menu_level/menu_level_2b/menu_level_3a',
+      //         },
+      //         {
+      //           title: 'menu_level_3b',
+      //           path: '#/dashboard/menu_level/menu_level_2b/menu_level_3b',
+      //           children: [
+      //             {
+      //               title: 'menu_level_4a',
+      //               path: '#/dashboard/menu_level/menu_level_2b/menu_level_3b/menu_level_4a',
+      //             },
+      //             {
+      //               title: 'menu_level_4b',
+      //               path: '#/dashboard/menu_level/menu_level_2b/menu_level_3b/menu_level_4b',
+      //             },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: 'item_disabled',
+      //   path: '#disabled',
+      //   icon: ICONS.disabled,
+      //   disabled: true,
+      // },
 
-      {
-        title: 'item_label',
-        path: '#label',
-        icon: ICONS.label,
-        info: (
-          <Label color="info" startIcon={<Iconify icon="eva:email-fill" />}>
-            NEW
-          </Label>
-        ),
-      },
-      {
-        title: 'item_caption',
-        path: '#caption',
-        icon: ICONS.menuItem,
-        caption:
-          'Quisque malesuada placerat nisl. In hac habitasse platea dictumst. Cras id dui. Pellentesque commodo eros a enim. Morbi mollis tellus ac sapien.',
-      },
-      {
-        title: 'item_external_link',
-        path: 'https://www.google.com/',
-        icon: ICONS.external,
-      },
-      {
-        title: 'blank',
-        path: PATH_DASHBOARD.blank,
-        icon: ICONS.blank,
-      },
-    ],
-  },
+      // {
+      //   title: 'item_label',
+      //   path: '#label',
+      //   icon: ICONS.label,
+      //   info: (
+      //     <Label color="info" startIcon={<Iconify icon="eva:email-fill" />}>
+      //       NEW
+      //     </Label>
+      //   ),
+      // },
+      // {
+      //   title: 'item_caption',
+      //   path: '#caption',
+      //   icon: ICONS.menuItem,
+      //   caption:
+      //     'Quisque malesuada placerat nisl. In hac habitasse platea dictumst. Cras id dui. Pellentesque commodo eros a enim. Morbi mollis tellus ac sapien.',
+      // },
+      // {
+      //   title: 'item_external_link',
+      //   path: 'https://www.google.com/',
+      //   icon: ICONS.external,
+      // },
+      // {
+      //   title: 'blank',
+      //   path: PATH_DASHBOARD.blank,
+      //   icon: ICONS.blank,
+      // },
+    // ],
+  // s
 ];
 
 export default navConfig;
