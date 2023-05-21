@@ -40,17 +40,17 @@ export default function FileGeneralStorageOverview({ data, total, chart, ...othe
     },
     plotOptions: {
       radialBar: {
-        startAngle: -90,
-        endAngle: 90,
+        startAngle: 0,
+        endAngle: 360,
         hollow: {
-          size: '56%',
+          size: '60%',
         },
         dataLabels: {
           name: {
-            offsetY: 8,
+            offsetY: 25,
           },
           value: {
-            offsetY: -40,
+            offsetY: -15,
           },
           total: {
             label: `Used of ${fData(total)}`,
@@ -75,7 +75,7 @@ export default function FileGeneralStorageOverview({ data, total, chart, ...othe
 
   return (
     <Card {...other}>
-      <Chart type="radialBar" series={[series]} options={chartOptions} height={360} />
+      <Chart type="radialBar" series={[series]} options={chartOptions} height={340} />
 
       <Stack spacing={3} sx={{ p: 3 }}>
         {data.map((category) => (
