@@ -94,7 +94,7 @@ export default function GeneralFilePage() {
     <FileGeneralStorageOverview
       total={GB}
       chart={{
-        series: 76,
+        series: 99,
       }}
       data={[
         {
