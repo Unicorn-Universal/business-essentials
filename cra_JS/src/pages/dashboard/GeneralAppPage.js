@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Stack, Button } from '@mui/material';
+import { Container, Grid, Stack } from '@mui/material';
 // auth
-import { useAuthContext } from '../../auth/useAuthContext';
+// import { useAuthContext } from '../../auth/useAuthContext';
 // _mock_
 import {
-  _appFeatured,
+  // _appFeatured,
   _appAuthors,
   // _appInstalled,
   // _appRelated,
@@ -17,8 +17,8 @@ import { useSettingsContext } from '../../components/settings';
 // sections
 import {
   AppWidget,
-  AppWelcome,
-  AppFeatured,
+  // AppWelcome,
+  // AppFeatured,
   AppNewInvoice,
   AppTopAuthors,
   // AppTopRelated,
@@ -28,12 +28,12 @@ import {
   // AppTopInstalledCountries,
 } from '../../sections/@dashboard/general/app';
 // assets
-import { SeoIllustration } from '../../assets/illustrations';
+// import { SeoIllustration } from '../../assets/illustrations';
 
 // ----------------------------------------------------------------------
 
 export default function GeneralAppPage() {
-  const { user } = useAuthContext();
+  // const { user } = useAuthContext();
 
   const theme = useTheme();
 
@@ -146,14 +146,14 @@ export default function GeneralAppPage() {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
                 series: [
                   {
-                    year: '2022',
+                    year: '2019',
                     data: [
                       { name: 'Asia', data: [10, 41, 35, 51, 49, 62, 69, 91, 148] },
                       { name: 'America', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
                     ],
                   },
                   {
-                    year: '2023',
+                    year: '2020',
                     data: [
                       { name: 'Asia', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
                       { name: 'America', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
@@ -164,7 +164,25 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} lg={6}>
+            <AppNewInvoice
+              title="Recent Invoices"
+              tableData={_appInvoices}
+              tableLabels={[
+                { id: 'id', label: 'Invoice ID' },
+                { id: 'category', label: 'Category' },
+                { id: 'price', label: 'Price' },
+                { id: 'status', label: 'Status' },
+                { id: '' },
+              ]}
+            />
+          </Grid>
+
+          <Grid item xs={12} md={6} lg={3}>
+            <AppTopAuthors title="Team" list={_appAuthors} />
+          </Grid>
+      
+          <Grid item xs={12} md={6} lg={3}>
             <Stack spacing={3}>
               <AppWidget
                 title="People"
@@ -195,27 +213,6 @@ export default function GeneralAppPage() {
               />
             </Stack>
           </Grid>
-
-
-          <Grid item xs={12} lg={4}>
-            <AppNewInvoice
-              title="Recent Invoices"
-              tableData={_appInvoices}
-              tableLabels={[
-                { id: 'id', label: 'Invoice ID' },
-                { id: 'category', label: 'Category' },
-                { id: 'price', label: 'Price' },
-                { id: 'status', label: 'Status' },
-                { id: '' },
-              ]}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTopAuthors title="Team" list={_appAuthors} />
-          </Grid>
-      
-
           {/* <Grid item xs={12} md={6} lg={4}>
             <AppTopRelated title="Top Related Applications" list={_appRelated} />
           </Grid>

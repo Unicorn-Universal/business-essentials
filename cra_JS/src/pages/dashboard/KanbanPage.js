@@ -100,12 +100,12 @@ export default function KanbanPage() {
   return (
     <>
       <Helmet>
-        <title> Kanban | Minimal UI</title>
+        <title> Tasks | Business Essentials</title>
       </Helmet>
 
       <Container maxWidth={false} sx={{ height: 1 }}>
         <CustomBreadcrumbs
-          heading="Kanban"
+          heading="Tasks"
           links={[
             {
               name: 'Dashboard',

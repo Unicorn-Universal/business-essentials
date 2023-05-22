@@ -19,12 +19,12 @@ export default function FileGeneralUpgrade({ sx, ...other }) {
     >
       <UpgradeStorageIllustration />
 
-      <Button size="large" color="warning" variant="contained" sx={{ mt: 5, mb: 2 }}>
-        Upgrade Plan
+      <Button href='./files-manager' size="large" color="warning" variant="contained" sx={{ mt: 5, mb: 2 }}>
+         File Manager
       </Button>
 
       <Typography variant="caption" sx={{ color: 'text.disabled', textAlign: 'center' }}>
-        Upgrade your plan and get more space
+       Manage files on company server
       </Typography>
     </Stack>
   );
