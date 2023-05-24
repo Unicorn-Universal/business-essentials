@@ -67,7 +67,7 @@ export default function GeneralEcommercePage() {
             />
           </Grid> */}
 
-          {/* <Grid item xs={12} md={12}>
+          <Grid item xs={12} md={12}>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
               <BankingWidgetSummary
                 title="Income"
@@ -90,7 +90,7 @@ export default function GeneralEcommercePage() {
                 }}
               />
             </Stack>
-          </Grid> */}
+          </Grid>
 
           {/* <Grid item xs={12} md={4}>
             <EcommerceNewProducts list={_ecommerceNewProducts} />
