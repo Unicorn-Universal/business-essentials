@@ -25,7 +25,7 @@ export default function UserCardsPage() {
   return (
     <>
       <Helmet>
-        <title> User: Cards | Business Essentials</title>
+        <title> User: Cards | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

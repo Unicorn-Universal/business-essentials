@@ -56,7 +56,7 @@ export default function DemoMapPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Map | Minimal UI</title>
+        <title> Extra Components: Map | Business Essentials </title>
       </Helmet>
 
       <Box

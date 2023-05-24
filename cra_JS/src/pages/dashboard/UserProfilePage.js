@@ -74,7 +74,7 @@ export default function UserProfilePage() {
   return (
     <>
       <Helmet>
-        <title> User: Profile | Minimal UI</title>
+        <title> User: Profile | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

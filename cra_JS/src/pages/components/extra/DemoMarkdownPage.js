@@ -122,7 +122,7 @@ export default function DemoMarkdownPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Markdown | Minimal UI</title>
+        <title> Extra Components: Markdown | Business Essentials </title>
       </Helmet>
 
       <Box

@@ -55,23 +55,23 @@ export default function BlogPostsPage() {
   return (
     <>
       <Helmet>
-        <title> Blog: Posts | Minimal UI</title>
+        <title> Blog: Posts | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Blog"
+          heading="Website Manager"
           links={[
             {
               name: 'Dashboard',
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Blog',
+              name: 'Website',
               href: PATH_DASHBOARD.blog.root,
             },
             {
-              name: 'Posts',
+              name: 'Pages',
             },
           ]}
           action={
@@ -81,7 +81,7 @@ export default function BlogPostsPage() {
               variant="contained"
               startIcon={<Iconify icon="eva:plus-fill" />}
             >
-              New Post
+              New Page
             </Button>
           }
         />

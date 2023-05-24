@@ -24,7 +24,7 @@ export default function InvoiceEditPage() {
   return (
     <>
       <Helmet>
-        <title> Invoice: Edit | Minimal UI</title>
+        <title> Invoice: Edit | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

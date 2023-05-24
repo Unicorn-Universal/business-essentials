@@ -151,6 +151,7 @@ export default function InvoiceListPage() {
     { value: 'unpaid', label: 'Unpaid', color: 'warning', count: getLengthByStatus('unpaid') },
     { value: 'overdue', label: 'Overdue', color: 'error', count: getLengthByStatus('overdue') },
     { value: 'draft', label: 'Draft', color: 'default', count: getLengthByStatus('draft') },
+    { value: 'draft', label: 'Waybill', color: 'info', count: getLengthByStatus('paid') },
   ];
 
   const handleOpenConfirm = () => {
@@ -224,7 +225,7 @@ export default function InvoiceListPage() {
   return (
     <>
       <Helmet>
-        <title> Invoice: List | Minimal UI</title>
+        <title> Invoice: List | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

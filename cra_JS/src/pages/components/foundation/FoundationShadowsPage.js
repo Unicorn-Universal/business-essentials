@@ -45,7 +45,7 @@ export default function FoundationShadowsPage() {
   return (
     <>
       <Helmet>
-        <title> Foundations: Shadows | Minimal UI</title>
+        <title> Foundations: Shadows | Business Essentials </title>
       </Helmet>
 
       <Box

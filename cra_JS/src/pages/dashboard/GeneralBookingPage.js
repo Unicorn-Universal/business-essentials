@@ -35,7 +35,7 @@ export default function GeneralBookingPage() {
   return (
     <>
       <Helmet>
-        <title> General: Booking | Minimal UI</title>
+        <title> General: Booking | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>

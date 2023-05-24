@@ -94,7 +94,7 @@ export default function GeneralFilePage() {
     <FileGeneralStorageOverview
       total={GB}
       chart={{
-        series: 99,
+        series: 76,
       }}
       data={[
         {
@@ -128,7 +128,7 @@ export default function GeneralFilePage() {
   return (
     <>
       <Helmet>
-        <title> General: File | Minimal UI</title>
+        <title> General: File | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>

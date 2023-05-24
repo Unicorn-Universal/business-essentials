@@ -44,7 +44,7 @@ export default function MUIPaginationPage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Pagination | Minimal UI</title>
+        <title> MUI Components: Pagination | Business Essentials </title>
       </Helmet>
 
       <Box

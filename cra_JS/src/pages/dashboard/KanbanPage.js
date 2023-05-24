@@ -100,7 +100,7 @@ export default function KanbanPage() {
   return (
     <>
       <Helmet>
-        <title> Tasks | Business Essentials</title>
+        <title> Tasks | Business Essentials </title>
       </Helmet>
 
       <Container maxWidth={false} sx={{ height: 1 }}>

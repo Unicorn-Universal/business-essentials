@@ -8,7 +8,7 @@ export default function ChatPage() {
   return (
     <>
       <Helmet>
-        <title> Chat | Minimal UI</title>
+        <title> Chat | Business Essentials </title>
       </Helmet>
 
       <Chat />

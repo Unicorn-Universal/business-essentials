@@ -81,7 +81,7 @@ export default function DemoUploadPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Upload | Minimal UI</title>
+        <title> Extra Components: Upload | Business Essentials </title>
       </Helmet>
 
       <Box

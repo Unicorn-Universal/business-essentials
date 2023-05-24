@@ -22,7 +22,7 @@ export default function DemoMegaMenuPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Mega Menu | Minimal UI</title>
+        <title> Extra Components: Mega Menu | Business Essentials </title>
       </Helmet>
 
       <Box

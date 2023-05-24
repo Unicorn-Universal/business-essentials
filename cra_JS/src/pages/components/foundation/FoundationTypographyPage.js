@@ -48,7 +48,7 @@ export default function FoundationTypographyPage() {
   return (
     <>
       <Helmet>
-        <title> Foundations: Typography | Minimal UI</title>
+        <title> Foundations: Typography | Business Essentials </title>
       </Helmet>
 
       <Box
