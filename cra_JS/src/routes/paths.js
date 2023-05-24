@@ -38,6 +38,7 @@ export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
   kanban: path(ROOTS_DASHBOARD, '/kanban'),
   calendar: path(ROOTS_DASHBOARD, '/calendar'),
+  // purchase: path(ROOTS_DASHBOARD, '/PurchaseListPage'),
   fileManager: path(ROOTS_DASHBOARD, '/files-manager'),
   // file: path(ROOTS_DASHBOARD, '/file'),
   permissionDenied: path(ROOTS_DASHBOARD, '/permission-denied'),
@@ -86,6 +87,17 @@ file: {
     demoEdit: path(ROOTS_DASHBOARD, '/e-commerce/product/nike-blazer-low-77-vintage/edit'),
     demoView: path(ROOTS_DASHBOARD, '/e-commerce/product/nike-air-force-1-ndestrukt'),
   },
+  
+  // purchase: {
+  //   root: path(ROOTS_DASHBOARD, '/purchase'),
+  //   list: path(ROOTS_DASHBOARD, '/purchase/list'),
+  //   new: path(ROOTS_DASHBOARD, '/purchase/new'),
+  //   view: (id) => path(ROOTS_DASHBOARD, `/purchase/${id}`),
+  //   edit: (id) => path(ROOTS_DASHBOARD, `/purchase/${id}/edit`),
+  //   demoEdit: path(ROOTS_DASHBOARD, '/purchase/e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1/edit'),
+  //   demoView: path(ROOTS_DASHBOARD, '/purchase/e99f09a7-dd88-49d5-b1c8-1daf80c2d7b5'),
+  // },
+
   invoice: {
     root: path(ROOTS_DASHBOARD, '/invoice'),
     list: path(ROOTS_DASHBOARD, '/invoice/list'),

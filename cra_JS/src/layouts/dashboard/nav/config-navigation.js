@@ -67,6 +67,7 @@ const navConfig = [
     items: [
       { title: 'Accounting', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
       {title: 'Sales',path: PATH_DASHBOARD.invoice.root, icon: ICONS.invoice},
+      // {title: 'Purchases',path: PATH_DASHBOARD.purchase.root, icon: ICONS.invoice},
       { title: 'Stock', path: PATH_DASHBOARD.eCommerce.list, icon: ICONS.banking },
       { title: 'POS', path: PATH_DASHBOARD.eCommerce.shop, icon: ICONS.cart },
      
