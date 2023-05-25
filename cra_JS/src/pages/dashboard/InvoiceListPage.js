@@ -246,6 +246,11 @@ export default function InvoiceListPage() {
           ]}
           action={
             <Button
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
               component={RouterLink}
               to={PATH_DASHBOARD.invoice.new}
               variant="contained"
@@ -253,6 +258,23 @@ export default function InvoiceListPage() {
             >
               New Invoice
             </Button>
+
+           { return(
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+                    }}
+                   >
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  </Menu>
+
+            )}
           }
         />
 
