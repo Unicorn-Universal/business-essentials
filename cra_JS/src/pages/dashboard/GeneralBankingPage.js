@@ -62,7 +62,7 @@ export default function GeneralBankingPage() {
 
           <Grid item xs={12} md={5}>
             <BankingCurrentBalance list={_bankingCreditCard} />
-          </Grid>
+          </Grid> 
 
           <Grid item xs={12} md={8}>
             <Stack spacing={3}>

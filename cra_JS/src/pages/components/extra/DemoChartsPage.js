@@ -83,7 +83,7 @@ export default function DemoChartsPage() {
 
           <Grid item xs={12} md={6}>
             <Card dir="ltr">
-              <CardHeader title="Column Multiple" />
+              <CardHeader title="Column Multiple" /> 
               <CardContent>
                 <ChartColumnMultiple />
               </CardContent>

@@ -87,7 +87,7 @@ export default function BankingExpensesCategories({ title, subheader, chart, ...
       <Stack direction="row" divider={<Divider orientation="vertical" flexItem />}>
         <Box sx={{ py: 2, width: 1, textAlign: 'center' }}>
           <Typography sx={{ mb: 1, typography: 'body2', color: 'text.secondary' }}>
-            Categories
+            Expence Catagoroes 
           </Typography>
 
           <Typography sx={{ typography: 'h4' }}>9</Typography>
@@ -95,7 +95,7 @@ export default function BankingExpensesCategories({ title, subheader, chart, ...
 
         <Box sx={{ py: 2, width: 1, textAlign: 'center' }}>
           <Typography sx={{ mb: 1, typography: 'body2', color: 'text.secondary' }}>
-            Categories
+            Total
           </Typography>
 
           <Typography sx={{ typography: 'h4' }}>$18,765</Typography>
