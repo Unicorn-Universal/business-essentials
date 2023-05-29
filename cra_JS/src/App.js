@@ -16,7 +16,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 // editor
 import 'react-quill/dist/quill.snow.css';
-
+ 
 // slick-carousel
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
