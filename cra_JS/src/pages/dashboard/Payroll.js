@@ -30,7 +30,7 @@ export default function BlankPage() {
             border: (theme) => `dashed 1px ${theme.palette.divider}`,
           }}
         />
-      </Container>
+      </Container> 
     </> 
   );
 }
