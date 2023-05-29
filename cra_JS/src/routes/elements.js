@@ -43,6 +43,9 @@ export const GeneralFilePage = Loadable(lazy(() => import('../pages/dashboard/Ge
 export const EcommerceShopPage = Loadable(
   lazy(() => import('../pages/dashboard/EcommerceShopPage'))
 );
+export const Payroll = Loadable(
+  lazy(() => import('../pages/dashboard/Payroll'))
+);
 export const EcommerceProductDetailsPage = Loadable(
   lazy(() => import('../pages/dashboard/EcommerceProductDetailsPage'))
 );

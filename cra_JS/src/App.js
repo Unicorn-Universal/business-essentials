@@ -58,8 +58,11 @@ import { AuthProvider } from './auth/JwtContext';
 
 // ----------------------------------------------------------------------
 
+
+
 export default function App() {
   return (
+    
     <AuthProvider>
       <HelmetProvider>
         <ReduxProvider store={store}>

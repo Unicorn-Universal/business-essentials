@@ -142,8 +142,8 @@ function Description() {
     <StyledDescription>
       <m.div variants={varFade().in}>
         <Typography variant="h2" sx={{ textAlign: 'center' }}>
-          Start a <br />
-          new project with
+          Manage your <br />
+          Company with
         </Typography>
       </m.div>
 
@@ -157,14 +157,13 @@ function Description() {
             repeat: Infinity,
           }}
         >
-          Minimal
+          Business Essentials
         </StyledGradientText>
       </m.div>
 
       <m.div variants={varFade().in}>
         <Typography variant="body2" sx={{ textAlign: 'center' }}>
-          The starting point for your next project is based on MUI.Easy customization Helps you
-          build apps faster and better.
+        Your All-in-One Solution for Life and Business
         </Typography>
       </m.div>
 
@@ -204,10 +203,10 @@ function Description() {
                 },
               }}
             >
-              Live Preview
+              Demo
             </Button>
 
-            <Link
+            {/* <Link
               color="inherit"
               variant="caption"
               target="_blank"
@@ -217,7 +216,7 @@ function Description() {
             >
               <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
               Get Free Version
-            </Link>
+            </Link> */}
           </Stack>
 
           <Button
@@ -230,12 +229,12 @@ function Description() {
             href={PATH_FIGMA_PREVIEW}
             sx={{ borderColor: 'text.primary' }}
           >
-            Design Preview
+            Contact Sales
           </Button>
         </Stack>
       </m.div>
 
-      <Stack spacing={3} sx={{ textAlign: 'center', opacity: 0.48 }}>
+      {/* <Stack spacing={3} sx={{ textAlign: 'center', opacity: 0.48 }}>
         <m.div variants={varFade().in}>
           <Typography variant="overline">Available For</Typography>
         </m.div>
@@ -247,7 +246,7 @@ function Description() {
             </m.div>
           ))}
         </Stack>
-      </Stack>
+      </Stack> */}
     </StyledDescription>
   );
 }

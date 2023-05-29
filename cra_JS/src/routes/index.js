@@ -32,6 +32,7 @@ import {
   UserProfilePage,
   UserAccountPage,
   // Dashboard: Ecommerce
+  Payroll,
   EcommerceShopPage,
   EcommerceCheckoutPage,
   EcommerceProductListPage,
@@ -181,6 +182,7 @@ export default function Router() {
         { path: 'banking', element: <GeneralBankingPage /> },
         { path: 'booking', element: <GeneralBookingPage /> },
         { path: 'file', element: <GeneralFilePage /> },
+        { path: 'payroll', element: <Payroll /> },
         {
           path: 'e-commerce',
           children: [

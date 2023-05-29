@@ -40,6 +40,7 @@ export const PATH_DASHBOARD = {
   calendar: path(ROOTS_DASHBOARD, '/calendar'),
   // purchase: path(ROOTS_DASHBOARD, '/PurchaseListPage'),
   fileManager: path(ROOTS_DASHBOARD, '/files-manager'),
+  
   // file: path(ROOTS_DASHBOARD, '/file'),
   permissionDenied: path(ROOTS_DASHBOARD, '/permission-denied'),
   blank: path(ROOTS_DASHBOARD, '/blank'),
@@ -50,12 +51,17 @@ export const PATH_DASHBOARD = {
     banking: path(ROOTS_DASHBOARD, '/banking'),
     booking: path(ROOTS_DASHBOARD, '/booking'),
     file: path(ROOTS_DASHBOARD, '/file'),
+    payroll: path(ROOTS_DASHBOARD, '/Payroll'),
   },
 
 // Persius added 
 file: {
   root: path(ROOTS_DASHBOARD, '/file'),
 },
+
+// payroll: {
+//   root: path(ROOTS_DASHBOARD, '/payroll'),
+// },
 
   mail: {
     root: path(ROOTS_DASHBOARD, '/mail'),

@@ -2,7 +2,7 @@
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // components
 import Label from '../../../components/label';
-import Iconify from '../../../components/iconify';
+// import Iconify from '../../../components/iconify';
 import SvgColor from '../../../components/svg-color';
 
 // ----------------------------------------------------------------------
@@ -66,6 +66,7 @@ const navConfig = [
     subheader: 'Book Keeping',
     items: [
       { title: 'Accounting', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
+      { title: 'Payroll', path: PATH_DASHBOARD.general.payroll, icon: ICONS.external },
       {title: 'Sales',path: PATH_DASHBOARD.invoice.root, icon: ICONS.invoice},
       // {title: 'Purchases',path: PATH_DASHBOARD.purchase.root, icon: ICONS.invoice},
       { title: 'Stock', path: PATH_DASHBOARD.eCommerce.list, icon: ICONS.banking },
