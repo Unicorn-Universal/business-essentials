@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Stack } from '@mui/material';
+import { Container, Grid, Stack, Typography } from '@mui/material';
 // auth
 // import { useAuthContext } from '../../auth/useAuthContext';
 // _mock_
@@ -46,6 +46,10 @@ export default function GeneralAppPage() {
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
+      <Typography variant="h4" sx={{ mb: 5 }}>
+          Hi, Welcome back
+        </Typography>
+
         <Grid container spacing={3}>
           {/* <Grid item xs={12} md={12}>
             <AppWelcome

@@ -41,7 +41,7 @@ export default function SimpleDialog() {
       <br />
       <Button variant="outlined" onClick={handleClickOpen}>
         Open simple dialog
-      </Button>
+      </Button> 
 
       <Dialog open={open} onClose={() => handleClose(selectedValue)}>
         <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>

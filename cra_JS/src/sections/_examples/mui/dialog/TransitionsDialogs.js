@@ -28,7 +28,7 @@ export default function TransitionsDialogs() {
   return (
     <div>
       <Button variant="outlined" color="success" onClick={handleClickOpen}>
-        Transitions Dialogs
+        Transitions Dialogs 
       </Button>
 
       <Dialog

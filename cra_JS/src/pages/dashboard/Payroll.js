@@ -1,11 +1,22 @@
+import { forwardRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Typography, Box, Button, Stack } from '@mui/material';
+import { Container, Grid, Typography, Button, Stack, Slide,
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  DialogContent,
+  DialogContentText,Box,
+  List,
+  Avatar,
+  ListItemText,
+  ListItemAvatar,
+  ListItemButton,} from '@mui/material';
 
 // import { grey } from '@mui/material/colors';
 
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Link as RouterLink, } from 'react-router-dom';
 
 // routes
 import { PATH_DASHBOARD } from '../../routes/paths';
@@ -49,14 +60,26 @@ import {
 } from '../../sections/@dashboard/general/banking';
 
 
+
 import Iconify from '../../components/iconify';
 
 // ----------------------------------------------------------------------
+const Transition = forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
+const emails = ['username@gmail.com', 'user02@gmail.com', 'another2@gmail.com', 'andanother@gmail.com'];
 export default function BlankPage() {
+  const { themeStretch } = useSettingsContext();
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
 
-  const { themeStretch } = useSettingsContext();
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -84,6 +107,7 @@ export default function BlankPage() {
           ]}
           action={
             <Button
+            onClick={handleClickOpen}
               component={RouterLink}
               to={PATH_DASHBOARD.general.payroll}
               variant="contained"
@@ -93,6 +117,64 @@ export default function BlankPage() {
             </Button>
           }
         />
+
+      {/* <Button variant="outlined" color="success" onClick={handleClickOpen}>
+        Transitions Dialogs
+      </Button> */}
+
+
+        <Dialog
+          open={open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-slide-title"
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle id="alert-dialog-slide-title">{` Select Emplyee / Multi Select for group payment`}</DialogTitle>
+
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              List of employees enrolled in Business Essentials Payroll
+            </DialogContentText>
+            <List>
+          {emails.map((email) => (
+            <ListItemButton onClick={() => handleClose(email)} key={email}>
+              <ListItemAvatar>
+                <Avatar
+                  sx={{
+                    color: 'info.main',
+                    backgroundColor: 'info.lighter',
+                  }}
+                >
+                  <Iconify icon="eva:person-fill" />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary={email} />
+            </ListItemButton>
+          ))}
+
+          <ListItemButton autoFocus onClick={() => handleClose('addAccount')}>
+            <ListItemAvatar>
+              <Avatar>
+                <Iconify icon="eva:plus-fill" />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Add account" />
+          </ListItemButton>
+        </List>
+          </DialogContent>
+
+          <DialogActions>
+            <Button color="inherit" onClick={handleClose}>
+              Disagree
+            </Button>
+
+            <Button variant="contained" onClick={handleClose}>
+              Agree
+            </Button>
+          </DialogActions>
+        </Dialog>
 
         <Grid container spacing={3}
         // sx={{
