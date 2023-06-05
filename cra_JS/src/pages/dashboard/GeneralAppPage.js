@@ -99,9 +99,9 @@ export default function GeneralAppPage() {
 
           <Grid item xs={12} md={3}>
             <AppWidgetSummary
-              title="Users"
-              percent={0.2}
-              total={4876}
+              title="Customers"
+              percent={3.2}
+              total={176}
               chart={{
                 colors: [theme.palette.info.main],
                 series: [20, 41, 63, 33, 28, 35, 50, 46, 11, 26],
@@ -152,15 +152,17 @@ export default function GeneralAppPage() {
                   {
                     year: '2019',
                     data: [
-                      { name: 'Asia', data: [10, 41, 35, 51, 49, 62, 69, 91, 148] },
-                      { name: 'America', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
+                      { name: 'Ghana', data: [10, 41, 35, 51, 49, 62, 69, 91, 148] },
+                      { name: 'Nigeria', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
+                      { name: 'Kenya', data: [13, 14, 53, 56, 77, 78, 79, 107, 125] },
                     ],
                   },
                   {
                     year: '2020',
                     data: [
-                      { name: 'Asia', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
-                      { name: 'America', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
+                      { name: 'Ghana', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
+                      { name: 'Nigeria', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
+                      { name: 'Kenya', data: [13, 14, 53, 56, 77, 78, 79, 107, 125] },
                     ],
                   },
                 ],
