@@ -214,6 +214,17 @@ const navConfig = [
      
   },
 
+    // SETTINGS
+  // ----------------------------------------------------------------------
+  {
+    subheader: 'Settings',
+    items: [
+      { title: 'Settings', path: PATH_DASHBOARD.user.account, icon: ICONS.menuItem },
+      { title: 'Profile', path: PATH_DASHBOARD.user.profile, icon: ICONS.user},
+     ],
+     
+  },
+
   // APP
   // ----------------------------------------------------------------------
   // {
