@@ -163,7 +163,7 @@ export default function GeneralAppPage() {
                       { name: 'Ghana', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
                       { name: 'Nigeria', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
                       { name: 'Kenya', data: [13, 14, 53, 56, 77, 78, 79, 107, 125] },
-                    ],
+                      ],
                   },
                 ],
               }}
