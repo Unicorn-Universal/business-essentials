@@ -11,6 +11,7 @@ import { MotionViewport, varFade } from '../../components/animate';
 const CARDS = [
   {
     icon: ' /assets/icons/home/ic_make_brand.svg',
+
     title: 'Stock Management',
     description: 'Consistent design makes it easy to brand your own.',
   },
@@ -18,7 +19,7 @@ const CARDS = [
     icon: ' /assets/icons/home/ic_design.svg',
     title: 'Accounting and Invoicing Tool',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
@@ -32,20 +33,42 @@ const CARDS = [
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    title: 'Messaging',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Development',
+    title: 'Payroll and Employee Management ',
     description: 'Easy to customize and extend, saving you time and money.',
   },
-  {
-    icon: ' /assets/icons/home/ic_development.svg',
-    title: '24/7 Support',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  }
+
+  // {
+  //   icon: ' /assets/icons/home/ic_development.svg',
+  //   title: 'File Management',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  // },
+  // {
+  //   icon: ' /assets/icons/home/ic_make_brand.svg',
+  //   title: 'Payroll/Employees',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  // },
+  // {
+  //   icon: ' /assets/icons/home/ic_design.svg',
+  //   title: 'Scheduling',
+  //   description:
+  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  // },
+  // {
+  //   icon: ' /assets/icons/home/ic_development.svg',
+  //   title: 'Keychain Management',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  // },
+  // {
+  //   icon: ' /assets/icons/home/ic_development.svg',
+  //   title: '24/7 Support',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  // }
 ];
 
 const StyledRoot = styled('div')(({ theme }) => ({
@@ -85,7 +108,9 @@ export default function HomeMinimal() {
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              What minimal <br /> helps you?
+
+              Why Essentials <br /> helps you?
+
             </Typography>
           </m.div>
         </Stack>
@@ -96,7 +121,7 @@ export default function HomeMinimal() {
           alignItems="center"
           gridTemplateColumns={{
             xs: 'repeat(1, 1fr)',
-            md: 'repeat(4, 1fr)',
+            md: 'repeat(3, 1fr)',
           }}
         >
           {CARDS.map((card, index) => (
