@@ -141,10 +141,10 @@ function Description() {
   return (
     <StyledDescription>
       <m.div variants={varFade().in}>
-        <Typography variant="h2" sx={{ textAlign: 'center' }}>
+        {/* <Typography variant="h2" sx={{ textAlign: 'center' }}>
           Manage your <br />
           Company with
-        </Typography>
+        </Typography> */}
       </m.div>
 
       <m.div variants={varFade().in}>

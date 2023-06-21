@@ -32,15 +32,20 @@ const CARDS = [
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'Messaging',
+    title: 'UI & UX Design',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Payroll and Employee Management ',
+    title: 'Development',
     description: 'Easy to customize and extend, saving you time and money.',
   },
+  {
+    icon: ' /assets/icons/home/ic_development.svg',
+    title: '24/7 Support',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  }
 ];
 
 const StyledRoot = styled('div')(({ theme }) => ({
@@ -74,28 +79,28 @@ export default function HomeMinimal() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-              Minimal UI
+              Features
             </Typography>
           </m.div>
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              Why Essentials <br /> helps you?
+              What minimal <br /> helps you?
             </Typography>
           </m.div>
         </Stack>
 
         <Box
-          gap={{ xs: 3, lg: 10 }}
+          gap={{ xs: 3, lg: 4 }}
           display="grid"
           alignItems="center"
           gridTemplateColumns={{
             xs: 'repeat(1, 1fr)',
-            md: 'repeat(3, 1fr)',
+            md: 'repeat(4, 1fr)',
           }}
         >
           {CARDS.map((card, index) => (
-            <m.div variants={varFade().inUp} key={card.title}>
+            <m.div  key={card.title}>
               <StyledCard
                 sx={{
                   ...(index === 1 && {

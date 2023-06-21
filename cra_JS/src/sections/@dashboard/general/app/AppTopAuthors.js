@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import orderBy from 'lodash/orderBy';
 // @mui
-import { alpha } from '@mui/material/styles';
+// import { alpha } from '@mui/material/styles';
 import { Box, Stack, Card, Avatar, CardHeader, Typography } from '@mui/material';
 // utils
-import { fShortenNumber } from '../../../../utils/formatNumber';
+// import { fShortenNumber } from '../../../../utils/formatNumber';
 // components
-import Iconify from '../../../../components/iconify';
+// import Iconify from '../../../../components/iconify';
 
 // ----------------------------------------------------------------------
 
@@ -58,12 +58,12 @@ function AuthorItem({ author, index }) {
             color: 'text.secondary',
           }}
         >
-          <Iconify icon="eva:heart-fill" width={16} sx={{ mr: 0.5 }} />
-          {fShortenNumber(author.favourite)}
+          {/* <Iconify icon="eva:heart-fill" width={16} sx={{ mr: 0.5 }} />
+          {fShortenNumber(author.favourite)} */}
         </Typography>
       </Box>
 
-      <Iconify
+      {/* <Iconify
         icon="ant-design:trophy-filled"
         sx={{
           p: 1,
@@ -81,7 +81,7 @@ function AuthorItem({ author, index }) {
             bgcolor: (theme) => alpha(theme.palette.error.main, 0.08),
           }),
         }}
-      />
+      /> */}
     </Stack>
   );
 }
