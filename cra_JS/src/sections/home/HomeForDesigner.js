@@ -103,7 +103,7 @@ function Description() {
     <StyledDescription>
       <m.div variants={varFade().inUp}>
         <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          Professional Kit
+          Professional Tools
         </Typography>
       </m.div>
 
@@ -118,7 +118,7 @@ function Description() {
             ),
           }}
         >
-          For Designer
+          For Startups
         </Typography>
       </m.div>
 

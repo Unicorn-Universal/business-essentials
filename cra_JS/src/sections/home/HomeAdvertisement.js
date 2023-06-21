@@ -55,8 +55,8 @@ function Description() {
         variants={varFade().inDown}
         sx={{ color: 'common.white', mb: 5, typography: 'h2' }}
       >
-        Get started with
-        <br /> minimal kit today
+        Launch Your Bussines with 
+        <br /> Essentials today
       </Box>
 
       <Stack

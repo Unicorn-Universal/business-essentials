@@ -11,18 +11,34 @@ import { MotionViewport, varFade } from '../../components/animate';
 const CARDS = [
   {
     icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Branding',
+    title: 'Stock Management',
     description: 'Consistent design makes it easy to brand your own.',
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    title: 'Accounting and Invoicing Tool',
     description:
       'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Development',
+    title: 'Document Creator',
+    description: 'Easy to customize and extend, saving you time and money.',
+  },
+  {
+    icon: ' /assets/icons/home/ic_make_brand.svg',
+    title: 'File Storage',
+    description: 'Consistent design makes it easy to brand your own.',
+  },
+  {
+    icon: ' /assets/icons/home/ic_design.svg',
+    title: 'Messaging',
+    description:
+      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+  },
+  {
+    icon: ' /assets/icons/home/ic_development.svg',
+    title: 'Payroll and Employee Management ',
     description: 'Easy to customize and extend, saving you time and money.',
   },
 ];
@@ -64,7 +80,7 @@ export default function HomeMinimal() {
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              What minimal <br /> helps you?
+              Why Essentials <br /> helps you?
             </Typography>
           </m.div>
         </Stack>

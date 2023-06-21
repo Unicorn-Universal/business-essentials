@@ -136,14 +136,14 @@ function Description() {
     <StyledDescription>
       <m.div variants={varFade().inUp}>
         <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          Interface Starter Kit
+          Business Essentials
         </Typography>
       </m.div>
 
       <m.div variants={varFade().inUp}>
         <Typography variant="h2" sx={{ my: 3 }}>
-          Huge pack <br />
-          of elements
+        Effortless Business and Lifestyle  <br />
+        Management
         </Typography>
       </m.div>
 
@@ -154,8 +154,7 @@ function Description() {
             color: 'text.secondary',
           }}
         >
-          We collected most popular elements. Menu, sliders, buttons, inputs etc. are all here. Just
-          dive in!
+          streamlined interface that makes managing your business a breeze. With a variety of tools and features at your fingertips, you&apos;ll be able to easily monitor your finances, track your inventory, manage your employees, and more
         </Typography>
       </m.div>
 
@@ -194,7 +193,7 @@ function Content() {
   return (
     <StyledContent>
       {/* Row 1 */}
-      <StyledRow>
+      {/* <StyledRow>
         <m.div variants={varFade().in}>
           <Button variant="contained" startIcon={<Iconify icon="ic:round-add-shopping-cart" />}>
             Add To Cart
@@ -216,7 +215,7 @@ function Content() {
         <m.div variants={varFade().in}>
           <CircularProgress color="error" />
         </m.div>
-      </StyledRow>
+      </StyledRow> */}
 
       {/* Row 2 */}
       <StyledRow>
@@ -226,7 +225,7 @@ function Content() {
             onChange={(event, newValue) => setCurrentTab(newValue)}
             sx={{ borderBottom: (theme) => `solid 1px ${theme.palette.divider}` }}
           >
-            {['Angular', 'React', 'Vue'].map((tab) => (
+            {['Task Management', 'Invoicing', 'File Stotage'].map((tab) => (
               <Tab
                 key={tab}
                 value={tab}
@@ -239,7 +238,7 @@ function Content() {
           </Tabs>
         </m.div>
 
-        <m.div variants={varFade().in}>
+        {/* <m.div variants={varFade().in}>
           <ToggleButtonGroup
             size="small"
             color="primary"
@@ -258,14 +257,14 @@ function Content() {
               </ToggleButton>
             ))}
           </ToggleButtonGroup>
-        </m.div>
+        </m.div> */}
 
         <m.div variants={varFade().in}>
           <Chip
             color="warning"
             onDelete={() => {}}
             avatar={<CustomAvatar src={_mock.image.avatar(2)} />}
-            label="Chip"
+            label="Director"
           />
         </m.div>
       </StyledRow>
@@ -300,7 +299,7 @@ function Content() {
 
         <m.div variants={varFade().in}>
           <Label variant="filled" color="error" startIcon={<Iconify icon="eva:email-fill" />}>
-            Label
+            Mail
           </Label>
         </m.div>
       </StyledRow>
@@ -311,7 +310,7 @@ function Content() {
           flexWrap: { lg: 'nowrap' },
         }}
       >
-        <m.div variants={varFade().in}>
+        {/* <m.div variants={varFade().in}>
           <Slider
             valueLabelDisplay="on"
             value={slider}
@@ -320,18 +319,18 @@ function Content() {
             }}
             sx={{ maxWidth: 220 }}
           />
-        </m.div>
+        </m.div> */}
 
-        <m.div variants={varFade().in}>
+        {/* <m.div variants={varFade().in}>
           <Alert severity="success" onClose={() => {}}>
             <AlertTitle>Success</AlertTitle>
             This is a success alert — <strong>check it out!</strong>
           </Alert>
-        </m.div>
+        </m.div> */}
       </StyledRow>
 
       {/* Row 5 */}
-      {isMd && (
+      {/* {isMd && (
         <StyledRow>
           <m.div variants={varFade().in}>
             <Pagination count={10} />
@@ -358,10 +357,10 @@ function Content() {
             </Scrollbar>
           </MenuPopover>
         </StyledRow>
-      )}
+      )} */}
 
       {/* Row 6 */}
-      {isMd && (
+      {/* {isMd && (
         <StyledRow>
           <m.div variants={varFade().in}>
             <FormControlLabel control={<Switch defaultChecked />} label="Label" />
@@ -385,14 +384,14 @@ function Content() {
             />
           </m.div>
         </StyledRow>
-      )}
+      )} */}
 
       {/* Row 7 */}
       {isLg && (
         <StyledRow sx={{ flexWrap: 'nowrap' }}>
           <m.div variants={varFade().in}>{cardPost}</m.div>
 
-          <Stack spacing={3} sx={{ width: 1 }}>
+          {/* <Stack spacing={3} sx={{ width: 1 }}>
             <m.div variants={varFade().in}>
               <TextField fullWidth label="Text Field" value="Value" />
             </m.div>
@@ -427,7 +426,7 @@ function Content() {
             <m.div variants={varFade().in}>
               <TextField fullWidth multiline rows={3} label="Textarea" />
             </m.div>
-          </Stack>
+          </Stack> */}
         </StyledRow>
       )}
     </StyledContent>
@@ -447,7 +446,7 @@ const ViewAllButton = (
       href={PATH_PAGE.components}
       endIcon={<Iconify icon="ic:round-arrow-right-alt" />}
     >
-      View All Components
+      View Feature list
     </Button>
   </m.div>
 );
@@ -463,8 +462,8 @@ const cardPost = (
     }}
   >
     <CardHeader
-      title="Jayvion Simon"
-      subheader="California, United States"
+      title="Kwame Nkansa"
+      subheader="Accra, Ghana"
       avatar={
         <CustomAvatar
           src={_mock.image.avatar(0)}
@@ -481,7 +480,7 @@ const cardPost = (
     <Image alt="cover" src={_mock.image.cover(12)} ratio="16/9" />
 
     <Typography variant="body2" sx={{ color: 'text.secondary', pt: 2, px: 2 }}>
-      Phasellus dolor. Fusce egestas elit eget lorem. Quisque id odio.
+      Task assigned to you By Director on payroll.
     </Typography>
 
     <Stack direction="row" sx={{ px: 2, py: 1 }}>

@@ -69,7 +69,7 @@ function Description() {
     >
       <m.div variants={varFade().inDown}>
         <Typography variant="overline" component="div" sx={{ color: 'text.disabled' }}>
-          Looking For a
+          Looking For an
         </Typography>
       </m.div>
 
@@ -81,7 +81,7 @@ function Description() {
             mb: { md: 5 },
           }}
         >
-          Landing Page Template?
+          All in One Business Essentials Tool Kit
         </Typography>
       </m.div>
 
@@ -110,6 +110,6 @@ const VisitButton = (
     href={PATH_ZONE_ON_STORE}
     endIcon={<Iconify icon="ic:round-arrow-right-alt" />}
   >
-    Visit Zone Landing Page
+    Try Out Business Essentials 
   </Button>
 );
