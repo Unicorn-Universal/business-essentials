@@ -139,7 +139,7 @@ function Description() {
             },
           }}
         >
-          Go to Demo
+          Go to Figma Workspace
         </Button>
       </m.div>
     </StyledDescription>

@@ -92,7 +92,7 @@ function Description() {
             endIcon={<Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />}
             sx={{ color: 'common.white', '&:hover': { borderColor: 'currentColor' } }}
           >
-            Demo
+            Get Free Version
           </Button>
         </m.div>
       </Stack>
