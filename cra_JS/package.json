@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "homepage": "http://persiusW.github.io/business-essentials",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
