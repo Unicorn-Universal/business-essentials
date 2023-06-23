@@ -10,44 +10,44 @@ import { MotionViewport, varFade } from '../../components/animate';
 
 const CARDS = [
   {
-    icon: ' /assets/icons/home/ic_make_brand.svg',
+    icon: ' /assets/icons/home/inventory.png',
     title: 'Stock Management',
     description: 'Consistent design makes it easy to brand your own.',
   },
   {
-    icon: ' /assets/icons/home/ic_design.svg',
+    icon: ' /assets/icons/home/calculator.png',
     title: 'Accounting',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'The kit is built on the principles of the atomic design system.',
   },
   {
-    icon: ' /assets/icons/home/ic_development.svg',
+    icon: ' /assets/icons/home/file.png',
     title: 'Document Creator',
     description: 'Easy to customize and extend, saving you time and money.',
   },
   {
-    icon: ' /assets/icons/home/ic_make_brand.svg',
+    icon: ' /assets/icons/home/folders.png',
     title: 'File Storage',
     description: 'Consistent design makes it easy to brand your own.',
   },
   {
-    icon: ' /assets/icons/home/ic_design.svg',
+    icon: ' /assets/icons/home/web-design.png',
     title: 'Web Design',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
-    icon: ' /assets/icons/home/ic_development.svg',
+    icon: ' /assets/icons/home/team.png',
     title: 'Team Management',
     description: 'Easy to customize and extend, saving you time and money.',
   },
   {
-    icon: ' /assets/icons/home/ic_development.svg',
+    icon: ' /assets/icons/home/scheduler.png',
     title: 'Scheduler',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
-    icon: ' /assets/icons/home/ic_development.svg',
+    icon: ' /assets/icons/home/support.png',
     title: '24/7 Support',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   }
@@ -122,7 +122,7 @@ export default function HomeMinimal() {
                 <Image
                   src={card.icon}
                   alt={card.title}
-                  sx={{ mx: 'auto', width: 48, height: 48 }}
+                  sx={{ mx: 'auto', width: 80, height: 80 }}
                 />
 
                 <Typography variant="h5" sx={{ mt: 8, mb: 2 }}>

@@ -81,7 +81,7 @@ function Description() {
             mb: { md: 5 },
           }}
         >
-          All in One Business Essentials Tool Kit
+          All in One Business Essentials Tool
         </Typography>
       </m.div>
 

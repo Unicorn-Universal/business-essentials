@@ -136,7 +136,7 @@ function Description() {
     <StyledDescription>
       <m.div variants={varFade().inUp}>
         <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          Business Essentials
+          Details
         </Typography>
       </m.div>
 
@@ -446,7 +446,7 @@ const ViewAllButton = (
       href={PATH_PAGE.components}
       endIcon={<Iconify icon="ic:round-arrow-right-alt" />}
     >
-      View Feature list
+      Learn more
     </Button>
   </m.div>
 );

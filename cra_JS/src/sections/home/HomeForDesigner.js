@@ -139,7 +139,7 @@ function Description() {
             },
           }}
         >
-          Go to Figma Workspace
+          Check Pro Version
         </Button>
       </m.div>
     </StyledDescription>
