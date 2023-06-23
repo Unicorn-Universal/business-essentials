@@ -16,7 +16,7 @@ const CARDS = [
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'Accounting and Invoicing Tool',
+    title: 'Accounting',
     description:
       'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
   },
@@ -32,14 +32,19 @@ const CARDS = [
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    title: 'Web Design',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Development',
+    title: 'Team Management',
     description: 'Easy to customize and extend, saving you time and money.',
+  },
+  {
+    icon: ' /assets/icons/home/ic_development.svg',
+    title: 'Scheduler',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
@@ -105,7 +110,7 @@ export default function HomeMinimal() {
                 sx={{
                   ...(index === 1 && {
                     boxShadow: (theme) => ({
-                      md: `-40px 40px 80px ${
+                      md: ` ${
                         theme.palette.mode === 'light'
                           ? alpha(theme.palette.grey[500], 0.16)
                           : alpha(theme.palette.common.black, 0.4)
