@@ -90,7 +90,7 @@ export default function HomeMinimal() {
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              What minimal <br /> helps you?
+              What business essentials <br /> do you get?
             </Typography>
           </m.div>
         </Stack>
