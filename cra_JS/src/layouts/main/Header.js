@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
+import * as React from 'react';
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Box, Button, AppBar, Toolbar, Container, Link } from '@mui/material';
+import { useTheme,styled, alpha } from '@mui/material/styles';
+import { Menu, Box, Button, AppBar, Toolbar, Container, Link, MenuItem, Divider, } from '@mui/material';
 // hooks
 import useOffSetTop from '../../hooks/useOffSetTop';
 import useResponsive from '../../hooks/useResponsive';
@@ -11,16 +12,58 @@ import { bgBlur } from '../../utils/cssStyles';
 // config
 import { HEADER } from '../../config-global';
 // routes
-import { PATH_DOCS, PATH_MINIMAL_ON_STORE } from '../../routes/paths';
+import { PATH_DOCS } from '../../routes/paths';
+// PATH_MINIMAL_ON_STORE
 // components
 import Logo from '../../components/logo';
-import Label from '../../components/label';
+// import Label from '../../components/label';
 //
 import navConfig from './nav/config-navigation';
 import NavMobile from './nav/mobile';
 import NavDesktop from './nav/desktop';
 
 // ----------------------------------------------------------------------
+const StyledMenu = styled((props) => (
+  <Menu
+    elevation={ 0 }
+    anchorOrigin={ {
+      vertical: 'bottom',
+      horizontal: 'right',
+    } }
+    transformOrigin={ {
+      vertical: 'top',
+      horizontal: 'right',
+    } }
+    { ...props }
+  />
+))(({ theme }) => ({
+  '& .MuiPaper-root': {
+    borderRadius: 6,
+    marginTop: theme.spacing(1),
+    minWidth: 180,
+    color:
+      theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+    boxShadow:
+      'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
+    '& .MuiMenu-list': {
+      padding: '4px 0',
+    },
+    '& .MuiMenuItem-root': {
+      '& .MuiSvgIcon-root': {
+        fontSize: 18,
+        color: theme.palette.text.secondary,
+        marginRight: theme.spacing(1.5),
+      },
+      '&:active': {
+        backgroundColor: alpha(
+          theme.palette.primary.main,
+          theme.palette.action.selectedOpacity,
+        ),
+      },
+    },
+  },
+}));
+
 
 export default function Header() {
   const carouselRef = useRef(null);
@@ -30,6 +73,15 @@ export default function Header() {
   const isDesktop = useResponsive('up', 'md');
 
   const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <AppBar ref={carouselRef} color="transparent" sx={{ boxShadow: 0 }}>
@@ -66,11 +118,37 @@ export default function Header() {
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
-
-          <Button variant="contained" target="_blank" rel="noopener" href={PATH_MINIMAL_ON_STORE}>
-            Login
+           <Button
+            id="demo-customized-button"
+            // href={PATH_MINIMAL_ON_STORE}
+        aria-controls={open ? 'demo-customized-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        variant="contained"
+        disableElevation
+        onClick={handleClick}
+      >
+        Login
           </Button>
-
+          <StyledMenu
+        id="demo-customized-menu"
+        MenuListProps={{
+          'aria-labelledby': 'demo-customized-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose} disableRipple>
+          Login to Essentials
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+          Login as Freelancer
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+          Login as Agent
+        </MenuItem>
+</StyledMenu>
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
         </Container>
       </Toolbar>
