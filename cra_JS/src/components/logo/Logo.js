@@ -5,6 +5,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import { Box, Link } from '@mui/material';
 
+import B_E from './B_E.svg';
+
+
 // ----------------------------------------------------------------------
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
@@ -21,8 +24,8 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const logo = (
     <Box
       component="img"
-      src="/logo/B_E.svg" 
-      sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
+      src={B_E}
+      sx={{ width: 80, height: 80, cursor: 'pointer', ...sx }}
     />
   );
 
