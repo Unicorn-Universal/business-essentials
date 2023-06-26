@@ -12,8 +12,8 @@ import { bgBlur } from '../../utils/cssStyles';
 // config
 import { HEADER } from '../../config-global';
 // routes
-import { PATH_DOCS } from '../../routes/paths';
-// PATH_MINIMAL_ON_STORE
+import { PATH_DOCS, PATH_FREE_VERSION } from '../../routes/paths';
+
 // components
 import Logo from '../../components/logo';
 // import Label from '../../components/label';
@@ -120,7 +120,7 @@ export default function Header() {
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
            <Button
             id="demo-customized-button"
-            // href={PATH_MINIMAL_ON_STORE}
+            
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
@@ -139,8 +139,11 @@ export default function Header() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+            <MenuItem onClick={ handleClose } disableRipple>
+              <Button href={PATH_FREE_VERSION}>
+
           Login to Essentials
+              </Button>
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           Login as Freelancer
