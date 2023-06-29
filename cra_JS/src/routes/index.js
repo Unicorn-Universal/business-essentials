@@ -17,6 +17,8 @@ import {
   VerifyCodePage,
   NewPasswordPage,
   ResetPasswordPage,
+  AgentLoginPage,
+  FreelancerLoginPage,
   // Dashboard: General
   GeneralAppPage,
   GeneralFilePage,
@@ -150,6 +152,22 @@ export default function Router() {
           element: (
             <GuestGuard>
               <RegisterPage />
+            </GuestGuard>
+          ),
+        },
+        {
+          path: 'agentLogin',
+          element: (
+            <GuestGuard>
+              <AgentLoginPage />
+            </GuestGuard>
+          ),
+        },
+        {
+          path: 'freelancerLogin',
+          element: (
+            <GuestGuard>
+              <FreelancerLoginPage />
             </GuestGuard>
           ),
         },

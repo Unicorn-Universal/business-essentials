@@ -5,6 +5,7 @@ import * as React from 'react';
 import { useTheme,styled, alpha } from '@mui/material/styles';
 import { Menu, Box, Button, AppBar, Toolbar, Container, Link, MenuItem, Divider, } from '@mui/material';
 // hooks
+import { Link as RouterLink } from 'react-router-dom';
 import useOffSetTop from '../../hooks/useOffSetTop';
 import useResponsive from '../../hooks/useResponsive';
 // utils
@@ -12,7 +13,7 @@ import { bgBlur } from '../../utils/cssStyles';
 // config
 import { HEADER } from '../../config-global';
 // routes
-import { PATH_DOCS, PATH_FREE_VERSION } from '../../routes/paths';
+import { PATH_DOCS, PATH_MINIMAL_ON_STORE, PATH_AUTH } from '../../routes/paths';
 
 // components
 import Logo from '../../components/logo';
@@ -128,7 +129,7 @@ export default function Header() {
         disableElevation
         onClick={handleClick}
       >
-        Login
+        Login/Register
           </Button>
           <StyledMenu
         id="demo-customized-menu"
@@ -139,17 +140,14 @@ export default function Header() {
         open={open}
         onClose={handleClose}
       >
-            <MenuItem onClick={ handleClose } disableRipple>
-              <Button href={PATH_FREE_VERSION}>
-
-          Login to Essentials
-              </Button>
+        <MenuItem onClick={ handleClose }>
+          <Link underline="none" component={RouterLink} to={PATH_AUTH.login}>Essentials</Link>
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          Login as Freelancer
+              <Link underline="none" component={RouterLink} to={PATH_AUTH.freelancerLogin}>Freelancer</Link>
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          Login as Agent
+          <Link underline="none" component={RouterLink} to={PATH_AUTH.agentLogin}>Agent</Link>
         </MenuItem>
 </StyledMenu>
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}

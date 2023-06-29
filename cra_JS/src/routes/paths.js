@@ -12,7 +12,11 @@ const ROOTS_DASHBOARD = '/dashboard';
 export const PATH_AUTH = {
   root: ROOTS_AUTH,
   login: path(ROOTS_AUTH, '/login'),
+  freelancerLogin: path(ROOTS_AUTH, '/freelancerLogin'),
+  agentLogin: path(ROOTS_AUTH, '/agentLogin'),
   register: path(ROOTS_AUTH, '/register'),
+  freelancerRegister: path(ROOTS_AUTH, '/freelancerRegister'),
+  agentRegister: path(ROOTS_AUTH, '/agentRegister'),
   loginUnprotected: path(ROOTS_AUTH, '/login-unprotected'),
   registerUnprotected: path(ROOTS_AUTH, '/register-unprotected'),
   verify: path(ROOTS_AUTH, '/verify'),
