@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import * as React from 'react';
 // @mui
 import { useTheme,styled, alpha } from '@mui/material/styles';
-import { Menu, Box, Button, AppBar, Toolbar, Container, Link, MenuItem, Divider, } from '@mui/material';
+import { Menu, Box, Button, AppBar, Toolbar, Container, Link, MenuItem } from '@mui/material';
 // hooks
 import { Link as RouterLink } from 'react-router-dom';
 import useOffSetTop from '../../hooks/useOffSetTop';
@@ -13,7 +13,7 @@ import { bgBlur } from '../../utils/cssStyles';
 // config
 import { HEADER } from '../../config-global';
 // routes
-import { PATH_DOCS, PATH_MINIMAL_ON_STORE, PATH_AUTH } from '../../routes/paths';
+import { PATH_DOCS, PATH_AUTH } from '../../routes/paths';
 
 // components
 import Logo from '../../components/logo';
