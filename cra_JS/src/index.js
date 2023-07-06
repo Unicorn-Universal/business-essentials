@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-// import { createClient } from '@supabase/supabase-js';
-
-// const supabase = createClient('https://antgdwrtvdbjnntjfyyl.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFudGdkd3J0dmRiam5udGpmeXlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NjI5MTksImV4cCI6MjAwMDMzODkxOX0.jKGjaLTgsZfXayHt-p1JgUtsaE512pslDdAKCGHCizo');
-
 
 // ----------------------------------------------------------------------
 
