@@ -106,6 +106,7 @@
     "stylis-plugin-rtl": "^2.1.1",
     "web-vitals": "^3.1.1",
     "worker-loader": "^3.0.8",
+    "yarn": "^1.22.19",
     "yet-another-react-lightbox": "^2.4.2",
     "yup": "^1.0.0"
   },
