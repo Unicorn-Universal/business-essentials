@@ -1,3 +1,7 @@
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore'; // Import the Firestore module if you're using Firestore
+
+
 // routes
 import { PATH_DASHBOARD } from './routes/paths';
 
@@ -15,6 +19,15 @@ export const FIREBASE_API = {
   appId: process.env.REACT_APP_FIREBASE_APPID,
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+try {
+  if (!firebase.apps.length) {
+    firebase.initializeApp(FIREBASE_API);
+  }
+} catch (error) {
+  console.log('Firebase initialization error:', error);
+}
+
 
 export const COGNITO_API = {
   userPoolId: process.env.REACT_APP_AWS_COGNITO_USER_POOL_ID,
