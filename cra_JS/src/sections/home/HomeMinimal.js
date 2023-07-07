@@ -15,8 +15,8 @@ const CARDS = [
     description: 'Consistent design makes it easy to brand your own.',
   },
   {
-    icon: ' /assets/icons/home/calculator.png',
-    title: 'Accounting',
+    icon: ' /assets/icons/home/ic_design.svg',
+    title: 'Accounting and Invoicing Tool',
     description:
       'The kit is built on the principles of the atomic design system.',
   },
