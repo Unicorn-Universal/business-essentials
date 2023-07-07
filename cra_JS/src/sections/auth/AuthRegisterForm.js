@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
-import { Stack, IconButton, InputAdornment, Alert } from '@mui/material';
-import { LoadingButton } from '@mui/lab';
+import { Stack, IconButton, InputAdornment, Alert, Button } from '@mui/material';
+// import { LoadingButton } from '@mui/lab';
 // auth
 import { useAuthContext } from '../../auth/useAuthContext';
+import { PATH_AUTH } from '../../routes/paths';
 // components
 import Iconify from '../../components/iconify';
 import FormProvider, { RHFTextField } from '../../components/hook-form';
@@ -45,23 +47,24 @@ export default function AuthRegisterForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = methods;
 
-  const onSubmit = async (data) => {
-    try {
-      if (register) {
-        await register(data.email, data.password, data.firstName, data.lastName);
-      }
-    } catch (error) {
-      console.error(error);
-      reset();
-      setError('afterSubmit', {
-        ...error,
-        message: error.message || error,
-      });
-    }
-  };
+  // const onSubmit = async (data) => {
+  //   try {
+  //     if (register) {
+  //       await register(data.email, data.password, data.firstName, data.lastName);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     reset();
+  //     setError('afterSubmit', {
+  //       ...error,
+  //       message: error.message || error,
+  //     });
+  //   }
+  // };
+  // onSubmit={handleSubmit(onSubmit)}
 
   return (
-    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+    <FormProvider methods={methods}>
       <Stack spacing={2.5}>
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
@@ -86,8 +89,13 @@ export default function AuthRegisterForm() {
             ),
           }}
         />
+        <Link to={ PATH_AUTH.signUpForm } variant="subtitle2">
+          <Button variant="contained" fullWidth>
+            Sign Up
+          </Button>
+        </Link>
 
-        <LoadingButton
+        {/* <LoadingButton
           fullWidth
           color="inherit"
           size="large"
@@ -104,7 +112,7 @@ export default function AuthRegisterForm() {
           }}
         >
           Create account
-        </LoadingButton>
+        </LoadingButton> */}
       </Stack>
     </FormProvider>
   );

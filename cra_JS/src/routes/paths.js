@@ -17,6 +17,7 @@ export const PATH_AUTH = {
   agentRegister: path(ROOTS_AUTH, '/agentRegister'),
   register: path(ROOTS_AUTH, '/register'),
   freelancerRegister: path(ROOTS_AUTH, '/freelancerRegister'),
+  signUpForm: path(ROOTS_AUTH, '/signUpForm'),
   loginUnprotected: path(ROOTS_AUTH, '/login-unprotected'),
   registerUnprotected: path(ROOTS_AUTH, '/register-unprotected'),
   verify: path(ROOTS_AUTH, '/verify'),

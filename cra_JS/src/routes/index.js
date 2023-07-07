@@ -21,6 +21,7 @@ import {
   FreelancerLoginPage,
   AgentRegisterPage,
   FreelancerRegisterPage,
+  SignUpFormPage,
   // Dashboard: General
   GeneralAppPage,
   GeneralFilePage,
@@ -186,6 +187,14 @@ export default function Router() {
           element: (
             <GuestGuard>
               <FreelancerLoginPage />
+            </GuestGuard>
+          ),
+        },
+        {
+          path: 'signUpForm',
+          element: (
+            <GuestGuard>
+              <SignUpFormPage />
             </GuestGuard>
           ),
         },
