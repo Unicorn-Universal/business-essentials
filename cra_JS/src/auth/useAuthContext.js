@@ -1,4 +1,6 @@
 import { useContext } from 'react';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 //
 // import { AuthContext } from './JwtContext';
 // import { AuthContext } from './Auth0Context';

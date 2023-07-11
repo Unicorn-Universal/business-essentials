@@ -15,7 +15,6 @@ import {
 import { getFirestore, collection, doc, getDoc, setDoc } from 'firebase/firestore';
 // config
 import { FIREBASE_API } from '../config-global';
-
 // ----------------------------------------------------------------------
 
 // NOTE:
