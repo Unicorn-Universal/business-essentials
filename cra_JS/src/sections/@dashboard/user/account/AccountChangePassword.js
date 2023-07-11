@@ -1,3 +1,27 @@
+// Auth
+
+import { getAuth, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
+
+
+// ...
+
+// const onSubmit = async (data) => {
+//   try {
+//     const auth = getAuth(); // Get the Firebase auth instance
+//     const user = auth.currentUser; // Get the current user
+
+//     // Update the user's password
+//     await updatePassword(user, data.newPassword);
+
+//     reset();
+//     enqueueSnackbar('Password updated successfully!', { variant: 'success' });
+//   } catch (error) {
+//     console.error(error);
+//     enqueueSnackbar('Failed to update password', { variant: 'error' });
+//   }
+// };
+
+
 import * as Yup from 'yup';
 // form
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -45,16 +69,54 @@ export default function AccountChangePassword() {
     formState: { isSubmitting },
   } = methods;
 
+  // const onSubmit = async (data) => {
+  //   try {
+  //     await new Promise((resolve) => setTimeout(resolve, 500));
+  //     reset();
+  //     enqueueSnackbar('Update success!');
+  //     console.log('DATA', data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // const onSubmit = async (data) => {
+  //   try {
+  //     const auth = getAuth(); // Get the Firebase auth instance
+  //     const user = auth.currentUser; // Get the current user
+  
+  //     // Update the user's password
+  //     await updatePassword(user, data.newPassword);
+  
+  //     reset();
+  //     enqueueSnackbar('Password updated successfully!', { variant: 'success' });
+  //   } catch (error) {
+  //     console.error(error);
+  //     enqueueSnackbar('Failed to update password', { variant: 'error' });
+  //   }
+  // };
+
   const onSubmit = async (data) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      const auth = getAuth(); // Get the Firebase auth instance
+      const user = auth.currentUser; // Get the current user
+  
+      const credential = EmailAuthProvider.credential(user.email, data.oldPassword);
+  
+      // Reauthenticate the user with their current email and password
+      await reauthenticateWithCredential(user, credential);
+  
+      // Update the user's password
+      await updatePassword(user, data.newPassword);
+  
       reset();
-      enqueueSnackbar('Update success!');
-      console.log('DATA', data);
+      enqueueSnackbar('Password updated successfully!', { variant: 'success' });
     } catch (error) {
       console.error(error);
+      enqueueSnackbar('Failed to update password', { variant: 'error' });
     }
   };
+  
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
