@@ -805,7 +805,7 @@ import {
         });
   
         // Redirect to the dashboard or another page
-        navigate('/dashboard');
+        // navigate('/dashboard');
       } catch (error) {
         console.error(error);
       }
