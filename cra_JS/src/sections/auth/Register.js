@@ -1,54 +1,53 @@
-// import { Link as RouterLink } from 'react-router-dom';
-// // @mui
-// import { Stack, Typography, Link } from '@mui/material';
-// // layouts
-// import LoginLayout from '../../layouts/login';
-// // routes
-// import { PATH_AUTH } from '../../routes/paths';
-// //
-// import AuthWithSocial from './AuthWithSocial';
-// import AuthRegisterForm from './AuthRegisterForm';
+import { Link as RouterLink } from 'react-router-dom';
+// @mui
+import { Stack, Typography, Link } from '@mui/material';
+// layouts
+import LoginLayout from '../../layouts/login';
+// routes
+import { PATH_AUTH } from '../../routes/paths';
+//
+import AuthWithSocial from './AuthWithSocial';
+import AuthRegisterForm from './AuthRegisterForm';
 
+// ----------------------------------------------------------------------
 
+export default function Register() {
+  return (
+    <LoginLayout title="Manage the job more effectively with Minimal">
+      <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
+        <Typography variant="h4">Get started absolutely free.</Typography>
 
-// // ----------------------------------------------------------------------
+        <Stack direction="row" spacing={0.5}>
+          <Typography variant="body2"> Already have an account? </Typography>
 
-// export default function Register() {
-//   return (
-//     <LoginLayout title="Manage the job more effectively with Minimal">
-//       <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
-//         <Typography variant="h4">Get started absolutely free.</Typography>
+          <Link component={RouterLink} to={PATH_AUTH.login} variant="subtitle2">
+            Sign in
+          </Link>
+        </Stack>
+      </Stack>
 
-//         <Stack direction="row" spacing={0.5}>
-//           <Typography variant="body2"> Already have an account? </Typography>
+      <AuthRegisterForm />
 
-//           <Link component={RouterLink} to={PATH_AUTH.login} variant="subtitle2">
-//             Sign in
-//           </Link>
-//         </Stack>
-//       </Stack>
+      <Typography
+        component="div"
+        sx={{ color: 'text.secondary', mt: 3, typography: 'caption', textAlign: 'center' }}
+      >
+        {'By signing up, I agree to '}
+        <Link underline="always" color="text.primary">
+          Terms of Service
+        </Link>
+        {' and '}
+        <Link underline="always" color="text.primary">
+          Privacy Policy
+        </Link>
+        .
+      </Typography>
 
-//       <AuthRegisterForm />
+      <AuthWithSocial />
+    </LoginLayout>
+  );
+}
 
-//       <Typography
-//         component="div"
-//         sx={{ color: 'text.secondary', mt: 3, typography: 'caption', textAlign: 'center' }}
-//       >
-//         {'By signing up, I agree to '}
-//         <Link underline="always" color="text.primary">
-//           Terms of Service
-//         </Link>
-//         {' and '}
-//         <Link underline="always" color="text.primary">
-//           Privacy Policy
-//         </Link>
-//         .
-//       </Typography>
-
-//       <AuthWithSocial />
-//     </LoginLayout>
-//   );
-// }
 
 // import { Link as RouterLink, useHistory  } from 'react-router-dom';
 // // @mui
@@ -373,64 +372,64 @@
 // }
 
 
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Stack, Typography, Link } from '@mui/material';
-import LoginLayout from '../../layouts/login';
-import AuthWithSocial from './AuthWithSocial';
-import AuthRegisterForm from './AuthRegisterForm';
-import { useAuthContext } from '../../auth/useAuthContext';
-import { PATH_AUTH } from '../../routes/paths';
+// import { Link as RouterLink, useNavigate } from 'react-router-dom';
+// import { Stack, Typography, Link } from '@mui/material';
+// import LoginLayout from '../../layouts/login';
+// import AuthWithSocial from './AuthWithSocial';
+// import AuthRegisterForm from './AuthRegisterForm';
+// import { useAuthContext } from '../../auth/useAuthContext';
+// import { PATH_AUTH } from '../../routes/paths';
 
-export default function Register() {
-  const navigate = useNavigate();
-  const { register, user } = useAuthContext();
+// export default function Register() {
+//   const navigate = useNavigate();
+//   const { register, user } = useAuthContext();
 
-  const handleRegister = async (email, password, firstName, lastName) => {
-    try {
-      await register(email, password, firstName, lastName);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+//   const handleRegister = async (email, password, firstName, lastName) => {
+//     try {
+//       await register(email, password, firstName, lastName);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
   
 
-  return (
-    <LoginLayout title="Manage the job more effectively with Minimal">
-      <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
-        <Typography variant="h4">Get started absolutely free.</Typography>
-        <Stack direction="row" spacing={0.5}>
-          <Typography variant="body2">Already have an account?</Typography>
-          <Link component={RouterLink} to='./signup.js' variant="subtitle2">
-            Sign in
-          </Link>
-        </Stack>
-      </Stack>
-      <AuthRegisterForm onRegister={handleRegister}
-        user={user}
-      />
-      <Typography
-        component="div"
-        sx={{
-          color: 'text.secondary',
-          mt: 3,
-          typography: 'caption',
-          textAlign: 'center',
-        }}
-      >
-        {'By signing up, I agree to '}
-        <Link underline="always" color="text.primary">
-          Terms of Service
-        </Link>
-        {' and '}
-        <Link underline="always" color="text.primary">
-          Privacy Policy
-        </Link>
-        .
-      </Typography>
-      <AuthWithSocial />
-    </LoginLayout>
-  );
-}
+//   return (
+//     <LoginLayout title="Manage the job more effectively with Minimal">
+//       <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
+//         <Typography variant="h4">Get started absolutely free.</Typography>
+//         <Stack direction="row" spacing={0.5}>
+//           <Typography variant="body2">Already have an account?</Typography>
+//           <Link component={RouterLink} to={PATH_AUTH.signUpForm} variant="subtitle2">
+//             Sign in
+//           </Link>
+//         </Stack>
+//       </Stack>
+//       <AuthRegisterForm onRegister={handleRegister}
+//         user={user}
+//       />
+//       <Typography
+//         component="div"
+//         sx={{
+//           color: 'text.secondary',
+//           mt: 3,
+//           typography: 'caption',
+//           textAlign: 'center',
+//         }}
+//       >
+//         {'By signing up, I agree to '}
+//         <Link underline="always" color="text.primary">
+//           Terms of Service
+//         </Link>
+//         {' and '}
+//         <Link underline="always" color="text.primary">
+//           Privacy Policy
+//         </Link>
+//         .
+//       </Typography>
+//       <AuthWithSocial />
+//     </LoginLayout>
+//   );
+// }
 
 
 

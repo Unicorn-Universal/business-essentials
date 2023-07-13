@@ -1,18 +1,12 @@
 import * as Yup from 'yup';
-import { useCallback } from 'react';
-// form
+import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-// @mui
 import { Box, Grid, Card, Stack, Typography } from '@mui/material';
+
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
 import { LoadingButton } from '@mui/lab';
-// auth
-import { useAuthContext } from '../../../../auth/useAuthContext';
-// utils
-import { fData } from '../../../../utils/formatNumber';
-// assets
-import { countries } from '../../../../assets/data';
-// components
+
 import { useSnackbar } from '../../../../components/snackbar';
 import FormProvider, {
   RHFSwitch,
@@ -20,18 +14,18 @@ import FormProvider, {
   RHFTextField,
   RHFUploadAvatar,
 } from '../../../../components/hook-form';
-
-// ----------------------------------------------------------------------
+import { countries } from '../../../../assets/data';
+import { useAuthContext } from '../../../../auth/useAuthContext';
 
 export default function AccountGeneral() {
   const { enqueueSnackbar } = useSnackbar();
-
   const { user } = useAuthContext();
 
   const UpdateUserSchema = Yup.object().shape({
     displayName: Yup.string().required('Name is required'),
-    email: Yup.string().required('Email is required').email('Email must be a valid email address'),
-    photoURL: Yup.mixed().required('Avatar is required'),
+    email: Yup.string()
+      .required('Email is required')
+      .email('Email must be a valid email address'),
     phoneNumber: Yup.string().required('Phone number is required'),
     country: Yup.string().required('Country is required'),
     address: Yup.string().required('Address is required'),
@@ -41,23 +35,21 @@ export default function AccountGeneral() {
     about: Yup.string().required('About is required'),
   });
 
-  const defaultValues = {
-    displayName: user?.displayName || '',
-    email: user?.email || '',
-    photoURL: user?.photoURL || null,
-    phoneNumber: user?.phoneNumber || '',
-    country: user?.country || '',
-    address: user?.address || '',
-    state: user?.state || '',
-    city: user?.city || '',
-    zipCode: user?.zipCode || '',
-    about: user?.about || '',
-    isPublic: user?.isPublic || false,
-  };
-
   const methods = useForm({
     resolver: yupResolver(UpdateUserSchema),
-    defaultValues,
+    defaultValues: {
+      displayName: '',
+      email: '',
+      photoURL: null,
+      phoneNumber: '',
+      country: '',
+      address: '',
+      state: '',
+      city: '',
+      zipCode: '',
+      about: '',
+      isPublic: false,
+    },
   });
 
   const {
@@ -66,30 +58,96 @@ export default function AccountGeneral() {
     formState: { isSubmitting },
   } = methods;
 
+  const [fieldValues, setFieldValues] = useState({
+    displayName: '',
+    email: '',
+    photoURL: null,
+    phoneNumber: '',
+    country: '',
+    address: '',
+    state: '',
+    city: '',
+    zipCode: '',
+    about: '',
+    isPublic: false,
+  });
+
   const onSubmit = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
       enqueueSnackbar('Update success!');
       console.log('DATA', data);
+      const firestore = getFirestore();
+
+      // Specify the path to the user profile document
+      const userProfilesRef = doc(firestore, 'userProfiles', user.uid);
+
+      // Create an object with the user data
+      const userData = {
+        uid: user.uid,
+        displayName: data.displayName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        country: data.country,
+        address: data.address,
+        state: data.state,
+        city: data.city,
+        zipCode: data.zipCode,
+        about: data.about,
+        isPublic: data.isPublic,
+      };
+
+      // Check if the photoURL field exists in the form data
+      if (data.photoURL) {
+        // If photoURL exists, add it to the user data
+        userData.photoURL = data.photoURL;
+      }
+
+      // Save the user data to the "userProfiles" collection
+      await setDoc(userProfilesRef, userData);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleDrop = useCallback(
-    (acceptedFiles) => {
-      const file = acceptedFiles[0];
+  const handleDrop = useCallback((acceptedFiles) => {
+    const file = acceptedFiles[0];
 
-      const newFile = Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      });
+    const reader = new FileReader();
+    reader.onload = () => {
+      const fileUrl = reader.result; // URL or base64-encoded string
 
-      if (file) {
-        setValue('photoURL', newFile, { shouldValidate: true });
+      if (fileUrl) {
+        setValue('photoURL', fileUrl, { shouldValidate: true });
       }
-    },
-    [setValue]
-  );
+    };
+
+    if (file) {
+      reader.readAsDataURL(file); // Convert file to URL or base64-encoded string
+    }
+  }, [setValue]);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const firestore = getFirestore();
+        const userProfilesRef = doc(firestore, 'userProfiles', user.uid);
+        const docSnap = await getDoc(userProfilesRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setFieldValues((prevValues) => ({ ...prevValues, ...data }));
+          Object.keys(data).forEach((key) => {
+            setValue(key, data[key]);
+          });
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchUserData();
+  }, [user.uid, setValue]);
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
@@ -112,7 +170,7 @@ export default function AccountGeneral() {
                   }}
                 >
                   Allowed *.jpeg, *.jpg, *.png, *.gif
-                  <br /> max size of {fData(3145728)}
+                  <br /> max size of 3MB
                 </Typography>
               }
             />

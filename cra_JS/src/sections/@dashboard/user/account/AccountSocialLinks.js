@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
-// form
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-// @mui
 import { Stack, Card, InputAdornment } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-// components
-import Iconify from '../../../../components/iconify';
+
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
 import { useSnackbar } from '../../../../components/snackbar';
 import FormProvider, { RHFTextField } from '../../../../components/hook-form';
 
-// ----------------------------------------------------------------------
+import Iconify from '../../../../components/iconify';
 
 const SOCIAL_LINKS = [
   {
@@ -30,34 +29,25 @@ const SOCIAL_LINKS = [
   },
 ];
 
-// ----------------------------------------------------------------------
-
 AccountSocialLinks.propTypes = {
   socialLinks: PropTypes.shape({
+    uid: PropTypes.string.isRequired, // Add the prop type validation for 'uid'
     facebookLink: PropTypes.string,
     instagramLink: PropTypes.string,
     linkedinLink: PropTypes.string,
     twitterLink: PropTypes.string,
-  }),
+  }).isRequired, // Make sure the prop is required
 };
 
 export default function AccountSocialLinks({ socialLinks }) {
   const { enqueueSnackbar } = useSnackbar();
 
-  const defaultValues = {
-    facebookLink: socialLinks.facebookLink,
-    instagramLink: socialLinks.instagramLink,
-    linkedinLink: socialLinks.linkedinLink,
-    twitterLink: socialLinks.twitterLink,
-  };
-
-  const methods = useForm({
-    defaultValues,
-  });
+  const methods = useForm();
 
   const {
     handleSubmit,
     formState: { isSubmitting },
+    setValue,
   } = methods;
 
   const onSubmit = async (data) => {
@@ -65,10 +55,39 @@ export default function AccountSocialLinks({ socialLinks }) {
       await new Promise((resolve) => setTimeout(resolve, 500));
       enqueueSnackbar('Update success!');
       console.log('DATA', data);
+  
+      const firestore = getFirestore();
+      const socialLinksRef = doc(firestore, 'SocialLinks', socialLinks.uid);
+  
+      const updatedData = { ...data, uid: socialLinks.uid }; // Add the uid field to the data object
+  
+      await setDoc(socialLinksRef, updatedData);
     } catch (error) {
       console.error(error);
     }
   };
+  
+
+  useEffect(() => {
+    const fetchSocialLinks = async () => {
+      try {
+        const firestore = getFirestore();
+        const socialLinksRef = doc(firestore, 'SocialLinks', socialLinks.uid);
+        const docSnap = await getDoc(socialLinksRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          Object.keys(data).forEach((key) => {
+            setValue(key, data[key]);
+          });
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSocialLinks();
+  }, [socialLinks.uid, setValue]);
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>

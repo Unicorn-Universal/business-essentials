@@ -14,15 +14,13 @@ import {
 } from 'firebase/auth';
 import { getFirestore, collection, doc, getDoc, setDoc } from 'firebase/firestore';
 // config
-import { FIREBASE_API } from '../config-global'; 
-// ----------------------------------------------------------------------
+import { FIREBASE_API } from '../config-global';
 
-// NOTE:
-// We only build demo at basic level.
-// Customer will need to do some extra handling yourself if you want to extend the logic and other features...
+export const db = getFirestore();
 
-// ----------------------------------------------------------------------
+const FirebaseContext = createContext(null);
 
+export default FirebaseContext;
 const initialState = {
   isInitialized: false,
   isAuthenticated: false,
@@ -47,11 +45,7 @@ export const AuthContext = createContext(null);
 
 // ----------------------------------------------------------------------
 
-const firebaseApp = initializeApp(FIREBASE_API);
-
-const AUTH = getAuth(firebaseApp);
-
-const DB = getFirestore(firebaseApp);
+const AUTH = getAuth();
 
 const GOOGLE_PROVIDER = new GoogleAuthProvider();
 
@@ -70,7 +64,7 @@ export function AuthProvider({ children }) {
     try {
       onAuthStateChanged(AUTH, async (user) => {
         if (user) {
-          const userRef = doc(DB, 'users', user.uid);
+          const userRef = doc(db, 'users', user.uid);
 
           const docSnap = await getDoc(userRef);
 
@@ -126,7 +120,7 @@ export function AuthProvider({ children }) {
   // REGISTER
   const register = useCallback(async (email, password, firstName, lastName) => {
     await createUserWithEmailAndPassword(AUTH, email, password).then(async (res) => {
-      const userRef = doc(collection(DB, 'users'), res.user?.uid);
+      const userRef = doc(collection(db, 'users'), res.user?.uid);
 
       await setDoc(userRef, {
         uid: res.user?.uid,

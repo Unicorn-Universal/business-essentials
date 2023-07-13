@@ -21,6 +21,7 @@ import {
   AccountSocialLinks,
   AccountNotifications,
   AccountChangePassword,
+  AccountCompliance,
 } from '../../sections/@dashboard/user/account';
 
 // ----------------------------------------------------------------------
@@ -38,6 +39,12 @@ export default function UserAccountPage() {
       label: 'General',
       icon: <Iconify icon="ic:round-account-box" />,
       component: <AccountGeneral />,
+    },
+    {
+      value: 'Compliance',
+      label: 'Manage Compliance',
+      icon: <Iconify icon="ic:round-vpn-key" />,
+      component: <AccountCompliance/>,
     },
     {
       value: 'billing',
@@ -69,6 +76,7 @@ export default function UserAccountPage() {
       icon: <Iconify icon="ic:round-vpn-key" />,
       component: <AccountChangePassword />,
     },
+    
   ];
 
   return (
